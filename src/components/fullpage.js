@@ -2,6 +2,7 @@ import React from "react";
 import ReactFullpage from '@fullpage/react-fullpage';
 import Header from '../components/header'
 
+
 export default function FullPage() {
     return ( 
         <ReactFullpage
@@ -15,14 +16,14 @@ export default function FullPage() {
                     <ReactFullpage.Wrapper>
                         <div className="section">
                             <Header text='Jack Doyle'/>
-                            <button onClick={() => fullpageApi.moveSectionDown()}>
+                            {/* <Button  onClick={() => fullpageApi.moveSectionDown()}>
                                 Click me to move down
-                            </button>
+                            </Button> */}
                         </div>
                         <div className="section">
                             <Header text='About Me'/>
                         </div>
-                        <div className="section">
+                        <div className="section" >
                             <Header text='Projects'/>
                         </div>
                         <div className="section">
