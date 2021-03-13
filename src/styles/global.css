@@ -10,6 +10,7 @@ body {
 
 h1 {
     color : #29a19c;
+    opacity: 0;
     font-family: 'Poppins', sans-serif;
 }
 
