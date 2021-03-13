@@ -9,10 +9,12 @@ body {
 }
 
 h1 {
-    /* font-size: 60px; */
+    font-size: 70px;
     color : #29a19c;
     opacity: 0;
     font-family: 'Poppins', sans-serif;
+    /*text-shadow: -2px 0px #a3f7bf; /* #393e46;
+    /* -4px 3px 0 #3a50d9, -14px 7px 0 #0a0e27; */
 }
 
 .line {
@@ -23,4 +25,13 @@ h1 {
     width: inherit;
     background-color: #29a19c;
     top: 0;
+}
+
+.contentDiv {
+    padding-bottom: 300px;
+    vertical-align: 100px;
+}
+
+.footerDiv {
+
 }

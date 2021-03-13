@@ -8,29 +8,22 @@ import anime from 'animejs/lib/anime.es.js';
 class FullPage extends React.Component {
 
   onLeave(origin, destination, direction) {
-    console.log(origin.item.childNodes[0])
-    var header = origin.item.childNodes[0].childNodes[0]
-    
+    // Reset Header opactiy when leaving slide so animation can play again
+    var header = origin.item.childNodes[0].childNodes[0].childNodes[0]
     header.style.opacity = "0";
-
-
   }
   afterLoad(origin, destination, direction) {
-    console.log(destination.item.childNodes[0]);
-    var header = destination.item.childNodes[0].childNodes[0]
-    //console.log(line)
-    //header.style.opacity = "1";
+    // Animate Header into page
+    var header = destination.item.childNodes[0].childNodes[0].childNodes[0]
+    
     var textAnimation = anime({
       targets: header,
       translateX: [0, 240],
-      delay: 500,
+      delay: 0,
       opacity : [0, 1],
       easing: 'easeInOutQuad',
       
     })
-
-
-      //textAnimation.restart()
   }
   
     render() {
@@ -45,16 +38,25 @@ class FullPage extends React.Component {
             return (
               <div id="fullpage-wrapper">
                 <div className="section">
+                  <div>
                     <Header id='1' text='Jack Doyle'/>
+                  </div>
                 </div>
                 <div className="section">
+                  <div className="contentDiv">
                     <Header text='About Me'/>
+                  </div>
+                  <div><p>Footer</p></div>
                 </div>
                 <div className="section" >
-                        <Header text='Projects'/>
+                  <div className="contentDiv">
+                    <Header text='Projects'/>
+                  </div>
                 </div>
                 <div className="section">
-                        <Header text='Contact'/>
+                  <div className="contentDiv">
+                    <Header text='Contact'/>
+                  </div>
                 </div>
               </div>
             );
