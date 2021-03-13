@@ -14,3 +14,12 @@ h1 {
     font-family: 'Poppins', sans-serif;
 }
 
+.line {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    height: 3px;
+    width: inherit;
+    background-color: #29a19c;
+    top: 0;
+}
