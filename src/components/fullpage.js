@@ -8,18 +8,21 @@ import anime from 'animejs/lib/anime.es.js';
 class FullPage extends React.Component {
 
   onLeave(origin, destination, direction) {
+    console.log(origin.item.childNodes[0])
+    var header = origin.item.childNodes[0].childNodes[0]
     
-    //textAnimation.restart()
+    header.style.opacity = "0";
+
 
   }
   afterLoad(origin, destination, direction) {
-      console.log(destination.item.childNodes[0]);
+    console.log(destination.item.childNodes[0]);
     var header = destination.item.childNodes[0].childNodes[0]
     //console.log(line)
-        
+    //header.style.opacity = "1";
     var textAnimation = anime({
       targets: header,
-      translateX: 240,
+      translateX: [0, 240],
       delay: 500,
       opacity : [0, 1],
       easing: 'easeInOutQuad',

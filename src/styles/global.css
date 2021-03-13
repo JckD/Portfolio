@@ -9,6 +9,7 @@ body {
 }
 
 h1 {
+    /* font-size: 60px; */
     color : #29a19c;
     opacity: 0;
     font-family: 'Poppins', sans-serif;
