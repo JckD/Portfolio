@@ -38,8 +38,8 @@ class FullPage extends React.Component {
             return (
               <div id="fullpage-wrapper">
                 <div className="section">
-                  <div>
-                    <Header id='1' text='Jack Doyle'/>
+                  <div className="contentDiv">
+                    <Header text='Jack Doyle'/>
                   </div>
                 </div>
                 <div className="section">
