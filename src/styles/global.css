@@ -1,11 +1,18 @@
 html {
     background-color: #222831;
     background: #222831;
+    height : 00%;
+    margin : 0;
+    padding: 0;
 }
 
 body {
     background-color: #222831;
     background: #222831;
+    height : 00%;
+    margin : 0;
+    padding: 0;
+    /* #393e46 */
 }
 
 h1 {
@@ -13,8 +20,32 @@ h1 {
     color : #29a19c;
     opacity: 0;
     font-family: 'Poppins', sans-serif;
+    /*vertical-align: center;
     /*text-shadow: -2px 0px #a3f7bf; /* #393e46;
     /* -4px 3px 0 #3a50d9, -14px 7px 0 #0a0e27; */
+}
+
+h2 {
+    color:  white;
+    font-family: 'Poppins', sans-serif;
+    /*vertical-align: center;*/
+}
+
+.virgo {
+    width: 100%;
+    position: relative;
+
+}
+
+.porrima *, .zaniah *, .heze * , .zavijava *, .spica *, .vindemiatrix *, .theta *, .auva * {
+    fill : white;
+}
+
+
+.porrima:hover *, .zaniah:hover *, .heze:hover *, .zavijava:hover *, .spica:hover *, .vindemiatrix:hover * , .theta:hover *, .auva:hover * {
+    fill : #29a19c;
+    cursor: pointer;
+
 }
 
 .line {
@@ -28,10 +59,30 @@ h1 {
 }
 
 .contentDiv {
-    padding-bottom: 300px;
-    vertical-align: 100px;
+    justify-content: center;
+    
+
+    
 }
+
+.sectionHeader {
+    padding-top: 20%;
+    min-height: 10em;
+    
+}
+
 
 .footerDiv {
 
+}
+
+.scroller {
+    fill : #29a19c;
+    cursor: pointer;
+}
+
+.sectionBackground {
+    background-image: url(../images/background.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }

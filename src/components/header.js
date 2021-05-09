@@ -5,7 +5,7 @@ export default function Header(props) {
     <>
         
       <h1 id={props.id}>{props.text}</h1>
-      <span className="line"></span>
+     
     
     </>
   ) 
