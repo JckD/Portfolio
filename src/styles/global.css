@@ -25,16 +25,49 @@ h1 {
     /* -4px 3px 0 #3a50d9, -14px 7px 0 #0a0e27; */
 }
 
-h2 {
+h2, h4, p{
     color:  white;
     font-family: 'Poppins', sans-serif;
+    text-align: justify;
     /*vertical-align: center;*/
 }
 
+h3 ,h5{
+    color : #29a19c;
+   
+    font-family: 'Poppins', sans-serif;   
+}
+
+hr {
+    border: 1px solid white;
+  
+}
+
+a { 
+    color: #a3f7bf;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #a3f7bf;
+    cursor: pointer;
+}
+
+
 .virgo {
+    z-index: 0;
     width: 100%;
     position: relative;
 
+}
+
+.particles {
+    left: 0px;
+    top: 0px;
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
 }
 
 .porrima *, .zaniah *, .heze * , .zavijava *, .spica *, .vindemiatrix *, .theta *, .auva * {
@@ -85,4 +118,48 @@ h2 {
     background-image: url(../images/background.svg);
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+
+.contentCard {
+    opacity: 0;
+    margin-top: 100px;
+    background-color: #222831;
+    padding: 24px;
+    border-radius: 10px;
+    justify-content: center;
+    flex-direction: column;
+    width: 90%;
+    min-height: 656px;
+}
+
+.projectCard {
+    background-color: #222831;
+    padding: 24px;
+    margin-top: 15px;
+    margin-right: 32px;
+    border-radius: 10px;
+    justify-content: center;
+    flex-direction: column;
+    width: 30%;
+    height: 90%;
+    min-height: 324px; 
+    
+}
+
+.cardDeck {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    
+}
+
+.projectCardImage {
+    
+    display: block;
+    margin : auto;
+    width: 50%;
+    height: 30%;
+   max-width: 50%;
+   max-height: 40%;
 }

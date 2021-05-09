@@ -4,11 +4,18 @@ import Header from '../components/header'
 import SlideContent from '../components/slideContent'
 import anime from 'animejs/lib/anime.es.js';
 
+import Particles from 'react-particles-js';
 import Container from 'react-bootstrap/Container';
 import Row  from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import SubHeader from "../components/subheader";
 import Button from 'react-bootstrap/Button';
+import ContentCard from "./projectCard";
+import CardDeck from "react-bootstrap/CardDeck";
+import Card from "react-bootstrap/Card";
+import ProjectCard from './projectCard';
+import bot from '../images/chatbotImage.png'
+import rights from '../images/rights.svg'
 
 
 class FullPage extends React.Component {
@@ -24,6 +31,9 @@ class FullPage extends React.Component {
     var svg = document.getElementById('virgo');
    // svg.style.opacity = "0";
 
+   var aboutMe = document.getElementById('aboutMeDiv')
+   aboutMe.style.opacity = "0";
+
 
 
     console.log(header)
@@ -35,6 +45,7 @@ class FullPage extends React.Component {
     var subheader = destination.item.childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[1]
     // var header = document.getElementsByClassName('header');
     var virgo = document.getElementById('virgo');
+    var aboutMe = document.getElementById('aboutMeDiv')
 
     console.log(destination)
     var textAnimation = anime({
@@ -45,12 +56,21 @@ class FullPage extends React.Component {
       easing: 'easeInOutQuad',
       
     })
+
+    var divAnimation = anime({
+      targets : [aboutMe],
+      translateX: [240, 0],
+      delay:0.2,
+      opacity: [0, 1],
+      easing: 'easeInOutQuad'
+    })
+
     var body = document.body
     console.log(body)
     body.addEventListener('mousemove', (e) => {
       //console.log(e)
-      virgo.style.left = - e.clientX * .05 + 'px'
-      virgo.style.top = - e.clientY * .05  + 50 + 'px'
+      virgo.style.left = - e.clientX * .02 + 'px'
+      virgo.style.top = - e.clientY * .02  + 50 + 'px'
 
 
     })
@@ -104,6 +124,52 @@ class FullPage extends React.Component {
                         {/* width="1110" height="814" viewBox="0 0 1480 1084" */}
                       </Col>
                       <Col>
+                      <div style={{position: "relative"}}>
+                      <Particles className="particles"
+                           params={{
+                            "particles": {
+                                "number": {
+                                    "value": 80,
+                                    "density": {
+                                        "enable": true,
+                                        "value_area": 100
+                                    }
+                                },
+                                "line_linked": {
+                                    "enable": false,
+                                    "opacity": 0.02
+                                },
+                                "move": {
+                                    "direction": "random",
+                                    "speed": 0.30
+                                },
+                                "size": {
+                                    "value": 2
+                                },
+                                "opacity": {
+                                    "anim": {
+                                        "enable": true,
+                                        "speed": 1,
+                                        "opacity_min": 0.05
+                                    }
+                                }
+                            },
+                            "interactivity": {
+                                "events": {
+                                    "onclick": {
+                                        "enable": true,
+                                        "mode": "push"
+                                    }
+                                },
+                                "modes": {
+                                    "push": {
+                                        "particles_nb": 1
+                                    }
+                                }
+                            },
+                            "retina_detect": true
+                        }}
+                        />
                         <svg id='virgo' className='virgo'  viewBox="0 0 1480 1084" fill="none" xmlns="http://www.w3.org/2000/svg">
                             
                           <g id="virgo component">
@@ -151,7 +217,7 @@ class FullPage extends React.Component {
                           </g>
                         </svg>
 
-
+                      </div>
                       </Col>
                     </Row>
                     <Row>  
@@ -192,10 +258,44 @@ class FullPage extends React.Component {
                         <SubHeader line1='Who am I'/>
                       </div>
                       </Col>
+                      <Col>
+                        <div  id="aboutMeDiv" className="contentCard">
+                          <h3>Education</h3>
+                          <p>
+                            I am a recent graduate from BSc Computre Science (Infrastucture)
+                            in the <a href='https://www.tudublin.ie/study/undergraduate/courses/computer-science-infrastructure-tu857/'>Technological University of Dublin</a> achieving a 2.1 award.
+                            I really enjoyed opportunity to get an outlook in different technologies and learn about them in a sctructured way
+                          </p>
+                          <p>
+                            I attended Christian Brothers College in Monkstown for Secondary level.
+                          </p>
+                          <hr/>
+                          <h3>Skills</h3>
+                          <p>
+                            I like to be a very active participant in team projects in University and in the workplace.
+                            Happy to take responsibliity and take lead on group work. Effective written  communication and presentation skills.
+                          </p>
+                          <p>
+                            I am currently most interested by the Web and Web Tecnologies. I explore this by taking
+                            on my own personal projects in my free time, check them out in the next <a onClick={() => fullpageApi.moveSectionDown()} style={{color: '#a3f7bf', cursor: "pointer"}}>section</a>.
+                          </p>
+                          <hr />
+                          <h3>Interests</h3>
+                          <p>
+                             I really enjoyed my time with the Games Society in university.
+                             I put a lot of work into orgaising events with the committee there that required commuinication
+                             among a large team of people.
+                          </p>
+                          <p>
+                            I am am deeply passionate about music listening to a large variety of genres and
+                            playing traditional Irish music on the Tenor Banjo and Mandolin.
+                          </p>
+                        </div>
+                      </Col>
                     </Row>
                     
                   </div>
-                  <div><p>Footer</p></div>
+         
                 </div>
                 <div className="section  sectionBackground" >
                   <div className="contentDiv">
@@ -206,6 +306,27 @@ class FullPage extends React.Component {
                             <SubHeader line1="What I've worked on"/>
                         </div>                          
                       </Col>
+                      <Col>
+                        <Row>
+                          <div className='cardDeck'>
+                          <ProjectCard title='Student Chatbot' img={bot} gitLink={'https://github.com/JckD/FYP'}
+                          text='This was my final year project for univserity. 
+                            Its aim was to make the lives of students easier by 
+                            acting as a hub of information that they would need for
+                            their day-to-day lives'
+                          />
+
+                          <ProjectCard title="Know Your Rights App" img={rights}
+                          text="The aim of this project was to collaborate with he
+                           end user of the app and co-design and build a mobile app to 
+                           help people with disabilities learn about thier rights."/>
+                         
+                        </div>
+                        </Row>
+                        
+                        
+                      </Col>
+                   
                     </Row>
                   </div>
                 </div>
