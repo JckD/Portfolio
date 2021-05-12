@@ -10,15 +10,17 @@ import Row  from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import SubHeader from "../components/subheader";
 import Button from 'react-bootstrap/Button';
-import ContentCard from "./projectCard";
+import ContentCard from "./ProjectCard";
 import CardDeck from "react-bootstrap/CardDeck";
 import Card from "react-bootstrap/Card";
-import ProjectCard from './projectCard';
+import ProjectCard from './ProjectCard';
 import bot from '../images/chatbotImage.png'
 import rights from '../images/rights.svg'
 
 
 class FullPage extends React.Component {
+
+
 
   onLeave(origin, destination, direction) {
     // Reset Header opactiy when leaving slide so animation can play again
@@ -309,17 +311,8 @@ class FullPage extends React.Component {
                       <Col>
                         <Row>
                           <div className='cardDeck'>
-                          <ProjectCard title='Student Chatbot' img={bot} gitLink={'https://github.com/JckD/FYP'}
-                          text='This was my final year project for univserity. 
-                            Its aim was to make the lives of students easier by 
-                            acting as a hub of information that they would need for
-                            their day-to-day lives'
-                          />
+                            <ProjectCard />                         
 
-                          <ProjectCard title="Know Your Rights App" img={rights}
-                          text="The aim of this project was to collaborate with he
-                           end user of the app and co-design and build a mobile app to 
-                           help people with disabilities learn about thier rights."/>
                          
                         </div>
                         </Row>
