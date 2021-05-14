@@ -67,7 +67,7 @@ a:hover {
     width: 80%;
     height: 100%;
     position: absolute;
-    z-index: 2;
+    z-index: 1;
 }
 
 .porrima *, .zaniah *, .heze * , .zavijava *, .spica *, .vindemiatrix *, .theta *, .auva * {
@@ -144,7 +144,18 @@ a:hover {
     width: 30%;
     height: 90%;
     min-height: 324px; 
+    position: relative;
     
+}
+
+.projectCard:hover {
+
+}
+
+.projectCardFooter {
+    position: absolute;
+    float: right;
+    bottom : 2%;
 }
 
 .cardDeck {
@@ -154,12 +165,19 @@ a:hover {
     
 }
 
+.projectCardIcon {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    
+}
+
 .projectCardImage {
     
     display: block;
     margin : auto;
-    width: 50%;
-    height: 30%;
+    /* width: 50%;
+    height: 30%; */
    max-width: 50%;
    max-height: 40%;
 }

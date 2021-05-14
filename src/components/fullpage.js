@@ -3,7 +3,7 @@ import ReactFullpage from '@fullpage/react-fullpage';
 import Header from '../components/header'
 import SlideContent from '../components/slideContent'
 import anime from 'animejs/lib/anime.es.js';
-
+import Blob from '../components/blob.js';
 import Particles from 'react-particles-js';
 import Container from 'react-bootstrap/Container';
 import Row  from 'react-bootstrap/Row';
@@ -38,7 +38,7 @@ class FullPage extends React.Component {
 
 
 
-    console.log(header)
+    //console.log(header)
      
   }
   afterLoad(origin, destination, direction) {
@@ -49,7 +49,7 @@ class FullPage extends React.Component {
     var virgo = document.getElementById('virgo');
     var aboutMe = document.getElementById('aboutMeDiv')
 
-    console.log(destination)
+    //console.log(destination)
     var textAnimation = anime({
       targets: [header, subheader],
       translateX: [0, 240],
@@ -68,7 +68,7 @@ class FullPage extends React.Component {
     })
 
     var body = document.body
-    console.log(body)
+    //console.log(body)
     body.addEventListener('mousemove', (e) => {
       //console.log(e)
       virgo.style.left = - e.clientX * .02 + 'px'
@@ -111,8 +111,8 @@ class FullPage extends React.Component {
               <div id="fullpage-wrapper">
                 
                 <div className="section sectionBackground">
- 
-
+              
+               
                   <div className="contentDiv">
                   
 
@@ -126,12 +126,14 @@ class FullPage extends React.Component {
                         {/* width="1110" height="814" viewBox="0 0 1480 1084" */}
                       </Col>
                       <Col>
+                      
                       <div style={{position: "relative"}}>
+                        
                       <Particles className="particles"
                            params={{
                             "particles": {
                                 "number": {
-                                    "value": 80,
+                                    "value": 60,
                                     "density": {
                                         "enable": true,
                                         "value_area": 100
@@ -172,6 +174,7 @@ class FullPage extends React.Component {
                             "retina_detect": true
                         }}
                         />
+                   
                         <svg id='virgo' className='virgo'  viewBox="0 0 1480 1084" fill="none" xmlns="http://www.w3.org/2000/svg">
                             
                           <g id="virgo component">

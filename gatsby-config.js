@@ -24,7 +24,7 @@ module.exports = {
             baseId: process.env.AIRTABLE_ID,
             tableName: 'projects',
             //tableView: `Grid View`, // optional
-            mapping: { "image": "fileNode" }, // optional, e.g. "text/markdown", "fileNode"
+            mapping: { "image": "fileNode", "icons" : "fileNode" }, // optional, e.g. "text/markdown", "fileNode"
             //tableLinks: [`CASE`, `SENSITIVE`, `COLUMN`, `NAMES`], // optional, for deep linking to records across tables.
           },
          
