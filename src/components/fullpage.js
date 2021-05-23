@@ -16,6 +16,7 @@ import Card from "react-bootstrap/Card";
 import ProjectCard from './ProjectCard';
 import bot from '../images/chatbotImage.png'
 import rights from '../images/rights.svg'
+import { CardColumns } from "react-bootstrap";
 
 
 class FullPage extends React.Component {
@@ -37,6 +38,10 @@ class FullPage extends React.Component {
    aboutMe.style.opacity = "0";
 
 
+   var cardDeck = document.getElementById('cardDeck')
+   cardDeck.style.opacity = "0";
+
+
 
     //console.log(header)
      
@@ -46,9 +51,11 @@ class FullPage extends React.Component {
     var header = destination.item.childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0]
     var subheader = destination.item.childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[1]
     // var header = document.getElementsByClassName('header');
+    var cardDeck = document.getElementById('cardDeck')
     var virgo = document.getElementById('virgo');
     var aboutMe = document.getElementById('aboutMeDiv')
 
+    // document.getElementById('cardDeck').style.opacity = "1"
     //console.log(destination)
     var textAnimation = anime({
       targets: [header, subheader],
@@ -60,12 +67,21 @@ class FullPage extends React.Component {
     })
 
     var divAnimation = anime({
-      targets : [aboutMe],
+      targets : [aboutMe, cardDeck],
       translateX: [240, 0],
       delay:0.2,
       opacity: [0, 1],
       easing: 'easeInOutQuad'
     })
+
+    // var cardDeckAnimation = anime({
+    //   targets: cardDeck,
+    //   translateX: [0, 0],
+    //   delay: 0,
+    //   opacity: [0, 1],
+    //   easing: 'easInOutQuad',
+    // })
+  
 
     var body = document.body
     //console.log(body)
@@ -313,7 +329,7 @@ class FullPage extends React.Component {
                       </Col>
                       <Col>
                         <Row>
-                          <div className='cardDeck'>
+                          <div className='cardDeck' id='cardDeck'>
                             <ProjectCard />                         
 
                          
