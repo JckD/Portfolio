@@ -15,8 +15,15 @@ body {
     /* #393e46 */
 }
 
+p {
+    font-size: 0.75vw;
+    color:  white;
+    font-family: 'Poppins', sans-serif;
+    text-align: justify;
+}
+
 h1 {
-    font-size: 70px;
+    font-size: 4vw;
     color : #29a19c;
     opacity: 0;
     font-family: 'Poppins', sans-serif;
@@ -25,7 +32,8 @@ h1 {
     /* -4px 3px 0 #3a50d9, -14px 7px 0 #0a0e27; */
 }
 
-h2, h4, p{
+h2, h4 {
+    font-size: 1.7vw;
     color:  white;
     font-family: 'Poppins', sans-serif;
     text-align: justify;
@@ -139,11 +147,11 @@ a:hover {
     margin-top: 15px;
     margin-right: 32px;
     border-radius: 10px;
-    justify-content: center;
+   
     flex-direction: column;
     width: 30%;
-    height: 90%;
-    min-height: 324px; 
+    height: 50%;
+  
     position: relative;
     
 }
@@ -154,8 +162,7 @@ a:hover {
 
 .projectCardFooter {
     position: absolute;
-    float: right;
-    bottom : 2%;
+    bottom : 10px;
 }
 
 .cardDeck {
@@ -166,9 +173,8 @@ a:hover {
 }
 
 .projectCardIcon {
-    width: 20px;
-    height: 20px;
-    margin-left: 5px;
+    width: 9%;
+    margin-left: 8px;
     
 }
 
@@ -176,8 +182,10 @@ a:hover {
     
     display: block;
     margin : auto;
-    /* width: 50%;
-    height: 30%; */
+    width: 30%;
+    /* height: 30%;  */
    max-width: 50%;
    max-height: 40%;
+
+   
 }
