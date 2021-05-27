@@ -4,7 +4,7 @@ export default function SubHeader(props) {
   return (
     <>
         
-      <h2 id={props.id}>{props.line1}<br/>{props.line2} <br/> {props.line3}</h2>
+      <h2>{props.line1}</h2>
      
     
     </>

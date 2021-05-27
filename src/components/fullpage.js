@@ -26,20 +26,20 @@ class FullPage extends React.Component {
   onLeave(origin, destination, direction) {
     // Reset Header opactiy when leaving slide so animation can play again
     var header = destination.item.childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0]
-    header.style.opacity = "0";
+    //header.style.opacity = "0";
 
     var subheader = destination.item.childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[1]
-    subheader.style.opacity = "0";
+    //subheader.style.opacity = "0";
     
     var svg = document.getElementById('virgo');
    // svg.style.opacity = "0";
 
    var aboutMe = document.getElementById('aboutMeDiv')
-   aboutMe.style.opacity = "0";
+  // aboutMe.style.opacity = "0";
 
 
    var cardDeck = document.getElementById('cardDeck')
-   cardDeck.style.opacity = "0";
+   //cardDeck.style.opacity = "0";
 
 
 
@@ -57,22 +57,22 @@ class FullPage extends React.Component {
 
     // document.getElementById('cardDeck').style.opacity = "1"
     //console.log(destination)
-    var textAnimation = anime({
-      targets: [header, subheader],
-      translateX: [0, 240],
-      delay: 0,
-      opacity : [0, 1],
-      easing: 'easeInOutQuad',
+    // var textAnimation = anime({
+    //   targets: [header, subheader],
+    //   translateX: [0, '20%'],
+    //   delay: 0,
+    //   opacity : [0, 1],
+    //   easing: 'easeInOutQuad',
       
-    })
+    // })
 
-    var divAnimation = anime({
-      targets : [aboutMe, cardDeck],
-      translateX: [240, 0],
-      delay:0.2,
-      opacity: [0, 1],
-      easing: 'easeInOutQuad'
-    })
+    // var divAnimation = anime({
+    //   targets : [aboutMe, cardDeck],
+    //   translateX: ['10%', 0],
+    //   delay:0.2,
+    //   opacity: [0, 1],
+    //   easing: 'easeInOutQuad'
+    // })
 
     // var cardDeckAnimation = anime({
     //   targets: cardDeck,
@@ -116,6 +116,7 @@ class FullPage extends React.Component {
   
     render() {
       return (
+        
         <ReactFullpage
           anchors={["JackDoyle", "AboutMe", "Projects", "Contact"]}
           licenseKey={process.env.FP_LICENSE}
@@ -126,70 +127,69 @@ class FullPage extends React.Component {
             return (
               <div id="fullpage-wrapper">
                 
+
                 <div className="section sectionBackground">
               
                
                   <div className="contentDiv">
-                  
-
-                    
                     <Row>
-                      <Col>
-                        <div className='sectionHeader'>
-                            <Header text='Jack Doyle'/>
-                            <SubHeader line1='Recent Grad' line2='interested in' line3='Web Technologies'/>
+                      <Col sm={true}>
+                        <div className="sectionHeader">
+                          <Header text='Jack Doyle'/>
+                            <SubHeader line1='Recent Grad'/>
+                            <SubHeader line1='interested in'/>
+                            <SubHeader line1='Web Technologies'/>
                         </div>
+                            
                         {/* width="1110" height="814" viewBox="0 0 1480 1084" */}
                       </Col>
-                      <Col>
-                      
-                      <div style={{position: "relative"}}>
-                        
-                      <Particles className="particles"
-                           params={{
-                            "particles": {
-                                "number": {
-                                    "value": 60,
-                                    "density": {
-                                        "enable": true,
-                                        "value_area": 100
-                                    }
-                                },
-                                "line_linked": {
-                                    "enable": false,
-                                    "opacity": 0.02
-                                },
-                                "move": {
-                                    "direction": "random",
-                                    "speed": 0.30
-                                },
-                                "size": {
-                                    "value": 2
-                                },
-                                "opacity": {
-                                    "anim": {
-                                        "enable": true,
-                                        "speed": 1,
-                                        "opacity_min": 0.05
-                                    }
-                                }
-                            },
-                            "interactivity": {
-                                "events": {
-                                    "onclick": {
-                                        "enable": true,
-                                        "mode": "push"
-                                    }
-                                },
-                                "modes": {
-                                    "push": {
-                                        "particles_nb": 1
-                                    }
-                                }
-                            },
-                            "retina_detect": true
-                        }}
-                        />
+                      <Col sm={true}>
+                      <div className="starsDiv">
+                        <Particles className="particles"
+                            params={{
+                              "particles": {
+                                  "number": {
+                                      "value": 60,
+                                      "density": {
+                                          "enable": true,
+                                          "value_area": 100
+                                      }
+                                  },
+                                  "line_linked": {
+                                      "enable": false,
+                                      "opacity": 0.02
+                                  },
+                                  "move": {
+                                      "direction": "random",
+                                      "speed": 0.30
+                                  },
+                                  "size": {
+                                      "value": 2
+                                  },
+                                  "opacity": {
+                                      "anim": {
+                                          "enable": true,
+                                          "speed": 1,
+                                          "opacity_min": 0.05
+                                      }
+                                  }
+                              },
+                              "interactivity": {
+                                  "events": {
+                                      "onclick": {
+                                          "enable": true,
+                                          "mode": "push"
+                                      }
+                                  },
+                                  "modes": {
+                                      "push": {
+                                          "particles_nb": 1
+                                      }
+                                  }
+                              },
+                              "retina_detect": true
+                          }}
+                          />
                    
                         <svg id='virgo' className='virgo'  viewBox="0 0 1480 1084" fill="none" xmlns="http://www.w3.org/2000/svg">
                             
@@ -237,13 +237,13 @@ class FullPage extends React.Component {
                             </g>
                           </g>
                         </svg>
-
                       </div>
                       </Col>
                     </Row>
+                   
                     <Row>  
                       <Col>
-                      <div style={{textAlign: 'center'}}>
+                      <div className="heroFooter">
                        
                       <svg  xmlns="http://www.w3.org/2000/svg" width="64" height="64" class="bi bi-mouse-fill" viewBox="0 0 16 16">
                         <path className="scroller" onClick={() => fullpageApi.moveSectionDown()} d="M3 5a5 5 0 0 1 10 0v6a5 5 0 0 1-10 0V5zm5.5-1.5a.5.5 0 0 0-1 0v2a.5.5 0 0 0 1 0v-2z"/>
@@ -264,23 +264,22 @@ class FullPage extends React.Component {
                         </div>
                       </Col>
                     </Row>
-                    
-                    
-                    
-                    
+
                   </div>
                 </div>
                 <div className="section  sectionBackground">
                   <div className="contentDiv">
                     <Row>
-                      <Col>
-                      <div className='sectionHeader'>
+                      <Col sm={true} >
+                      <div className="sectionHeader">
                         <Header id='header' text='About Me'/>
                         <SubHeader line1='Who am I'/>
                       </div>
+                        
+                     
                       </Col>
-                      <Col>
-                        <div  id="aboutMeDiv" className="contentCard">
+                      <Col sm={true}>
+                        <div  id="aboutMeDiv" className="contentCard" >
                           <h3>Education</h3>
                           <p>
                             I am a recent graduate from BSc Computre Science (Infrastucture)
@@ -321,13 +320,14 @@ class FullPage extends React.Component {
                 <div className="section  sectionBackground" >
                   <div className="contentDiv">
                   <Row>
-                      <Col>
-                        <div className='sectionHeader'>
-                            <Header text='Projects'/>
-                            <SubHeader line1="What I've worked on"/>
-                        </div>                          
+                      <Col sm={true}>
+                           <div className="sectionHeader">
+                              <Header text='Projects'/>
+                              <SubHeader line1="What I've worked on"/>
+                           </div>
+                                                
                       </Col>
-                      <Col>
+                      <Col sm={true}>
                         <Row>
                           <div className='cardDeck' id='cardDeck'>
                             <ProjectCard />                         
@@ -346,10 +346,12 @@ class FullPage extends React.Component {
                   <div className="contentDiv">
                   <Row>
                       <Col>
-                        <div className='sectionHeader'>
-                          <Header text='Contact'/>
-                          <SubHeader line1='Get in touch'/>
-                        </div>  
+                     
+                          <div className="sectionHeader">
+                            <Header text='Contact'/>
+                            <SubHeader line1='Get in touch'/>
+                          </div>
+                       
                       </Col>
                     </Row>
                     
