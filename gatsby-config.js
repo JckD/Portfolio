@@ -13,6 +13,7 @@ require("dotenv").config({
 module.exports = {
   
   /* Your site config here */
+
   plugins: [
     {
       resolve: `gatsby-source-airtable`,
@@ -39,6 +40,12 @@ module.exports = {
           ], display: 'swap'       
       }
     },
+    {
+      resolve : 'gh-pages',
+      options: {
+        pathPrefix: "/Portfolio",
+      }
+    }
    
   ],
 }

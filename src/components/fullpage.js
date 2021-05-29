@@ -136,7 +136,7 @@ class FullPage extends React.Component {
                
                   <div className="contentDiv">
                     <Row>
-                      <Col sm={true}>
+                      <Col sm={true} md={true} xl={1}>
                         <div className="sectionHeader">
                           <Header text='Jack Doyle'/>
                             <SubHeader line1='Recent Grad'/>
@@ -146,7 +146,7 @@ class FullPage extends React.Component {
                             
                         {/* width="1110" height="814" viewBox="0 0 1480 1084" */}
                       </Col>
-                      <Col sm={true}>
+                      <Col sm={true} md={true} xl={1}>
                       <div className="starsDiv">
                         <Particles className="particles"
                             params={{
