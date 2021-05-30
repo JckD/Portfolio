@@ -1,23 +1,11 @@
 import React from "react";
 import ReactFullpage from '@fullpage/react-fullpage';
 import Header from '../components/header'
-import SlideContent from '../components/slideContent'
-import anime from 'animejs/lib/anime.es.js';
-import Blob from '../components/blob.js';
 import Particles from 'react-particles-js';
-import Container from 'react-bootstrap/Container';
 import Row  from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import SubHeader from "../components/subheader";
-import Button from 'react-bootstrap/Button';
-import ContentCard from "./ProjectCard";
-import CardDeck from "react-bootstrap/CardDeck";
-import Card from "react-bootstrap/Card";
 import ProjectCard from './ProjectCard';
-import bot from '../images/chatbotImage.png'
-import rights from '../images/rights.svg'
-import { CardColumns } from "react-bootstrap";
-
 
 class FullPage extends React.Component {
 
