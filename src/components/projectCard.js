@@ -9,7 +9,7 @@ const ProjectCard = () => {
 
   const data = useStaticQuery(graphql`
     query ProjectCardQuery {
-      projects: allAirtable(
+      projects: allAirtable (
         filter: { table: { eq: "projects" }}
         
       ) {
