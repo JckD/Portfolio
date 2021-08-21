@@ -8,8 +8,8 @@ import Tooltip from 'react-bootstrap/Tooltip'
 const ProjectCard = () => {
 
   const data = useStaticQuery(graphql`
-    query ProjectCardQuery {
-      projects: allAirtable (
+    {
+      allAirtable (
         filter: { table: { eq: "projects" }}
         
       ) {
@@ -46,7 +46,7 @@ const ProjectCard = () => {
 
   return (
     <>
-    {data.projects.nodes.map((item, i)  =>(
+    {data.allAirtable.nodes.map((item, i)  =>(
       <div className='projectCard'>
         <Image src={item.data.image.raw[0].url} className='projectCardImage'/>
         <hr/>
