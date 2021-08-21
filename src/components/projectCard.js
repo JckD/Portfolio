@@ -8,67 +8,61 @@ import Tooltip from 'react-bootstrap/Tooltip'
 const ProjectCard = () => {
 
   const data = useStaticQuery(graphql`
-    {
-      allAirtable (
-        filter: { table: { eq: "projects" }}
-        
-      ) {
-        nodes {
+  {
+    allAirtable(filter: {table: {eq: "projects"}}) {
+      edges {
+        node {
           data {
-            Title
-            description
-            githublink
             image {
               raw {
                 url
               }
             }
+            Title
+            description
+            githublink
             icons {
               raw {
                 url
-                filename
               }
               localFiles {
                 name
               }
             }
           }
-          children {
-            id
-          }
         }
       }
-    } 
+    }
+  }
   `);
-    //console.log(data.projects.nodes[1].data.icons)
+    
 
- 
 
   return (
     <>
-    {data.allAirtable.nodes.map((item, i)  =>(
-      <div className='projectCard'>
-        <Image src={item.data.image.raw[0].url} className='projectCardImage'/>
-        <hr/>
-        <h5>{item.data.Title}</h5>
-        <p>{item.data.description}</p>
+      {data.allAirtable.edges.map(({ node }, i)  =>(
+        <div className='projectCard'>
+          <Image src={node.data.image.raw[0].url} className='projectCardImage'/>
+          <hr/>
+          <h5>{node.data.Title}</h5>
+          <p>{node.data.description}</p>
+
+          <div className="projectCardFooter">
+
+              <a href={node.data.githublink} target="_blank">
+              <Image  src={github} style={{width : '6%'}} />
+            </a>
         
-        <div className="projectCardFooter">
-         
-            <a href={item.data.githublink} target="_blank">
-             <Image  src={github} style={{width : '6%'}} />
-          </a>
-          {/* {icon.filename}.split(".")[0] */}
-           {item.data.icons.raw.map((icon, j) => ( 
-             <OverlayTrigger placement="bottom"  overlay={<Tooltip id="iconToolTip">{item.data.icons.localFiles[j].name}</Tooltip>}>
-               <Image src={icon.url} className="projectCardIcon"/>
-             </OverlayTrigger>   
-          ))}
+            {node.data.icons.raw.map((icon, j) => (
+              <OverlayTrigger placement="bottom"  overlay={<Tooltip id="iconToolTip">{node.data.icons.localFiles[j].name}</Tooltip>}>
+                <Image src={icon.url} className="projectCardIcon"/>
+              </OverlayTrigger>
+            ))}
+          </div>
         </div>
-      </div> 
-    ))}
+      ))}
     </>
-  ); 
+  );
 }
 
 export default ProjectCard;
