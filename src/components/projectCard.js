@@ -2,7 +2,7 @@ import React from "react"
 import Image from "react-bootstrap/Image"
 import github from "../images/github.svg"
 import { graphql, useStaticQuery } from 'gatsby';
-import { Overlay, OverlayTrigger } from "react-bootstrap";
+import { OverlayTrigger } from "react-bootstrap";
 import Tooltip from 'react-bootstrap/Tooltip'
 
 const ProjectCard = () => {
@@ -49,7 +49,7 @@ const ProjectCard = () => {
 
           <div className="projectCardFooter">
 
-              <a href={node.data.githublink} target="_blank">
+              <a href={node.data.githublink} target="_blank" rel="noreferrer">
               <Image  src={github} style={{width : '6%'}} />
             </a>
         

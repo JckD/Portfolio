@@ -5,7 +5,7 @@ import Particles from 'react-particles-js';
 import Row  from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import SubHeader from "../components/subheader";
-import ProjectCard from './ProjectCard';
+import ProjectCard from '../components/ProjectCard';
 
 class FullPage extends React.Component {
 
