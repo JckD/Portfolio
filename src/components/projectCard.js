@@ -5,7 +5,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { OverlayTrigger } from "react-bootstrap";
 import Tooltip from 'react-bootstrap/Tooltip'
 
- const ProjectCard = () => {
+export default function ProjectCard() {
 
   const data = useStaticQuery(graphql`
   {
@@ -65,4 +65,3 @@ import Tooltip from 'react-bootstrap/Tooltip'
   );
 }
 
-export default ProjectCard;
