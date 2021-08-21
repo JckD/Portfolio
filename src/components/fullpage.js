@@ -298,7 +298,7 @@ class FullPage extends React.Component {
                              among a large team of people.
                           </p>
                           <p>
-                            I am am deeply passionate about music listening to a large variety of genres and
+                            I am deeply passionate about music listening to a large variety of genres and
                             playing traditional Irish music on the Tenor Banjo and Mandolin.
                           </p>
                         </div>
