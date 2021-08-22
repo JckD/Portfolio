@@ -10,7 +10,7 @@ export default function ProductCard() {
 
     return (
       <StaticQuery
-        querr = { graphql`
+        query = { graphql`
         {
           allAirtable(filter: {table: {eq: "projects"}}) {
             edges {
