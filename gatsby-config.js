@@ -42,6 +42,7 @@ module.exports = {
 				],
 				display: "swap"
 			}
-		}
+		},
+		`gatsby-plugin-offline`
 	]
 }

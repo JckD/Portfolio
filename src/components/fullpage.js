@@ -275,7 +275,7 @@ class FullPage extends React.Component {
                           <p>
                             I am a recent graduate from BSc Computre Science (Infrastucture)
                             in the <a className="link" href='https://www.tudublin.ie/study/undergraduate/courses/computer-science-infrastructure-tu857/'>Technological University of Dublin</a> achieving a 2.1 award.
-                            I really enjoyed opportunity to get an outlook in different technologies and learn about them in a sctructured way
+                            I really enjoyed opportunity to get an outlook in different technologies and learn about them in a sctructured way.
                           </p>
                           <p>
                             I attended Christian Brothers College in Monkstown for Secondary level.
