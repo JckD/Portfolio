@@ -1,15 +1,19 @@
 html {
-    background-color: #222831;
-    background: #222831;
-    height : 00%;
+    /* background-color: #222831; */
+   
+    /* background: #222831; */
+    height : 100%;
     margin : 0;
     padding: 0;
 }
 
 body {
-    background-color: #222831;
-    background: #222831;
-    height : 00%;
+    /* background-color: #222831;
+    background: #222831; */
+    background-image: url(../images/wave-haikei16-9.svg);
+    height : 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
     margin : 0;
     padding: 0;
     /* #393e46 */
@@ -107,7 +111,7 @@ a:hover {
     /* justify-content: center; */
     /* flex-direction: column; */
     margin-top: 20%;
-    
+    overflow-wrap: break-word;
     width: 30%;
     
     margin-left: 25%;
@@ -170,9 +174,7 @@ a:hover {
 
 
 
-.footerDiv {
 
-}
 
 .scroller {
     fill : #29a19c;
@@ -180,7 +182,8 @@ a:hover {
 }
 
 .sectionBackground {
-    background-image: url(../images/background.svg);
+    aspect-ratio: 960/540;
+   
     background-size: cover;
     background-repeat: no-repeat;
     width: fit-content;

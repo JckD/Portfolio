@@ -6,6 +6,7 @@ import Row  from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import SubHeader from "../components/subheader";
 import ProjectCard from "../components/projectCard";
+import anime  from "animejs/lib/anime.es.js"
 
 class FullPage extends React.Component {
 
@@ -14,25 +15,27 @@ class FullPage extends React.Component {
   onLeave(origin, destination, direction) {
     // Reset Header opactiy when leaving slide so animation can play again
     var header = destination.item.childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0]
-    //header.style.opacity = "0";
+    header.style.opacity = "0";
 
     var subheader = destination.item.childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[1]
-    //subheader.style.opacity = "0";
-    
+    console.log(subheader)
+    subheader.style.opacity = "0";
+
     var svg = document.getElementById('virgo');
-   // svg.style.opacity = "0";
+    svg.style.opacity = "0";
 
    var aboutMe = document.getElementById('aboutMeDiv')
-  // aboutMe.style.opacity = "0";
+   aboutMe.style.opacity = "0";
 
 
    var cardDeck = document.getElementById('cardDeck')
-   //cardDeck.style.opacity = "0";
+   cardDeck.style.opacity = "0";
 
+    var contactDiv = document.getElementById('contactCard')
+    contactDiv.style.opacity = "0";
 
+    console.log(header)
 
-    //console.log(header)
-     
   }
   afterLoad(origin, destination, direction) {
     // Animate Header into page
@@ -42,25 +45,26 @@ class FullPage extends React.Component {
     var cardDeck = document.getElementById('cardDeck')
     var virgo = document.getElementById('virgo');
     var aboutMe = document.getElementById('aboutMeDiv')
+    var contactDiv = document.getElementById('contactCard')
 
-    // document.getElementById('cardDeck').style.opacity = "1"
-    //console.log(destination)
-    // var textAnimation = anime({
-    //   targets: [header, subheader],
-    //   translateX: [0, '20%'],
-    //   delay: 0,
-    //   opacity : [0, 1],
-    //   easing: 'easeInOutQuad',
-      
-    // })
+    document.getElementById('cardDeck').style.opacity = "1"
+    console.log(destination)
+    var textAnimation = anime({
+      targets: [header, subheader],
+      translateX: [0, '8%'],
+      delay: 0,
+      opacity : [0, 1],
+      easing: 'easeInOutQuad',
 
-    // var divAnimation = anime({
-    //   targets : [aboutMe, cardDeck],
-    //   translateX: ['10%', 0],
-    //   delay:0.2,
-    //   opacity: [0, 1],
-    //   easing: 'easeInOutQuad'
-    // })
+    })
+
+    var divAnimation = anime({
+      targets : [aboutMe, cardDeck, contactDiv ],
+      translateX: ['10%', 0],
+      delay:0.2,
+      opacity: [0, 1],
+      easing: 'easeInOutQuad'
+    })
 
     // var cardDeckAnimation = anime({
     //   targets: cardDeck,
@@ -69,7 +73,7 @@ class FullPage extends React.Component {
     //   opacity: [0, 1],
     //   easing: 'easInOutQuad',
     // })
-  
+
 
     var body = document.body
     //console.log(body)
@@ -89,25 +93,25 @@ class FullPage extends React.Component {
     //   delay: 100,
     //   opacity : [0, 1],
     //   easing: 'easeInOutQuad',
-      
+
     // })
 
 
-    // var svgFadeIn = anime({
-    //   targets : ,
-    //   translateX: [0, 0],
-    //   delay: 0,
-    //   opacity : [0, 1],
-    //   easing : 'easeInOutQuad'
-    // })
+    var svgFadeIn = anime({
+      targets : virgo,
+      translateX: [0, 0],
+      delay: 0,
+      opacity : [0, 1],
+      easing : 'easeInOutQuad'
+    })
   }
 
 
 
-  
+
     render() {
       return (
-        
+
         <ReactFullpage
           anchors={["JackDoyle", "AboutMe", "Projects", "Contact"]}
           licenseKey={process.env.FP_LICENSE}
@@ -117,21 +121,20 @@ class FullPage extends React.Component {
           render={({ state, fullpageApi }) => {
             return (
               <div id="fullpage-wrapper">
-                
+
 
                 <div className="section sectionBackground">
-              
-               
+
+
                   <div className="contentDiv">
                     <Row>
                       <Col sm={true} md={true} >
                         <div className="sectionHeader">
                           <Header text='Jack Doyle'/>
-                            <SubHeader line1='Recent Grad'/>
-                            <SubHeader line1='interested in'/>
-                            <SubHeader line1='Web Technologies'/>
+                          <SubHeader line1='Recent Grad' line2='interested in' line3 = 'Web technologies'/>
+                        
                         </div>
-                            
+
                         {/* width="1110" height="814" viewBox="0 0 1480 1084" */}
                       </Col>
                       <Col sm={true} md={true} >
@@ -181,9 +184,9 @@ class FullPage extends React.Component {
                               "retina_detect": true
                           }}
                           />
-                   
+
                         <svg id='virgo' className='virgo'  viewBox="0 0 1480 1084" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            
+
                           <g id="virgo component">
                             <g id="porrima" className="porrima">
                               <path id="Ellipse 11" d="M648 527C648 538.598 638.598 548 627 548C615.402 548 606 538.598 606 527C606 515.402 615.402 506 627 506C638.598 506 648 515.402 648 527ZM610.686 527C610.686 536.01 617.99 543.314 627 543.314C636.01 543.314 643.314 536.01 643.314 527C643.314 517.99 636.01 510.686 627 510.686C617.99 510.686 610.686 517.99 610.686 527Z"/>
@@ -231,16 +234,16 @@ class FullPage extends React.Component {
                       </div>
                       </Col>
                     </Row>
-                   
-                    <Row>  
+
+                    <Row>
                       <Col>
                       <div className="heroFooter">
-                       
+
                         <svg  xmlns="http://www.w3.org/2000/svg" width="64" height="64" class="bi bi-mouse-fill" viewBox="0 0 16 16">
                           <path className="scroller" onClick={() => fullpageApi.moveSectionDown()} d="M3 5a5 5 0 0 1 10 0v6a5 5 0 0 1-10 0V5zm5.5-1.5a.5.5 0 0 0-1 0v2a.5.5 0 0 0 1 0v-2z"/>
                         </svg>
-                      
-                        
+
+
                         </div>
                       </Col>
                     </Row>
@@ -251,7 +254,7 @@ class FullPage extends React.Component {
                           <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                           <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                         </svg>
-                      
+
                         </div>
                       </Col>
                     </Row>
@@ -266,8 +269,8 @@ class FullPage extends React.Component {
                         <Header id='header' text='About Me'/>
                         <SubHeader line1='Who am I'/>
                       </div>
-                        
-                     
+
+
                       </Col>
                       <Col sm={true}>
                         <div  id="aboutMeDiv" className="contentCard" >
@@ -304,9 +307,9 @@ class FullPage extends React.Component {
                         </div>
                       </Col>
                     </Row>
-                    
+
                   </div>
-         
+
                 </div>
                 <div className="section  sectionBackground" >
                   <div className="contentDiv">
@@ -316,15 +319,15 @@ class FullPage extends React.Component {
                               <Header text='Projects'/>
                               <SubHeader line1="What I've worked on"/>
                            </div>
-                                                
+
                       </Col>
                       <Col sm={true}>
                         <Row>
                           <div className='cardDeck' id='cardDeck'>
-                            <ProjectCard />                         
+                            <ProjectCard />
                         </div>
-                        </Row>          
-                      </Col>     
+                        </Row>
+                      </Col>
                     </Row>
                   </div>
                 </div>
@@ -335,15 +338,15 @@ class FullPage extends React.Component {
                           <div className="sectionHeader">
                             <Header text='Contact'/>
                             <SubHeader line1='Get in touch'/>
-                          </div>   
+                          </div>
                       </Col>
                       <Col sm={true}>
-                        <div style={{height : 500}}>
+                        <div id="contactCard" style={{height : 500}}>
                           <div className="contactCard">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#29a19c" class="bi bi-envelope-fill" viewBox="0 0 16 16">
                               <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
                             </svg>
-                            <a id="email" className="contact">jackp.doyle1@gmail.com</a>     
+                            <a id="email" className="contact">jackp.doyle1@gmail.com</a>
                             <hr/>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#29a19c" class="bi bi-linkedin" viewBox="0 0 16 16">
                               <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
@@ -351,10 +354,10 @@ class FullPage extends React.Component {
                             <a id="linkedIn" className="contact" href="https://www.linkedin.com/in/jack-p-doyle/">LinkedIn</a>
                         </div>
                         </div>
-                        
+
                       </Col>
                     </Row>
-                    
+
                   </div>
                 </div>
               </div>
@@ -369,7 +372,7 @@ class FullPage extends React.Component {
 
 
 
- 
+
 
 
 

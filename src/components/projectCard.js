@@ -1,10 +1,9 @@
 import React from "react"
 import Image from "react-bootstrap/Image"
 import github from "../images/github.svg"
-import { graphql, StaticQuery, useStaticQuery } from 'gatsby';
+import { graphql, StaticQuery } from 'gatsby';
 import { OverlayTrigger } from "react-bootstrap";
 import Tooltip from 'react-bootstrap/Tooltip'
-import { render } from "react-dom";
 
 export default function ProductCard() {
 
