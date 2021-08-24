@@ -2,14 +2,15 @@ import React from "react";
 import ReactFullpage from '@fullpage/react-fullpage';
 import Header from '../components/header'
 import Particles from 'react-particles-js';
-import Row  from 'react-bootstrap/Row';
+import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import SubHeader from "../components/subheader";
 import ProjectCard from "../components/projectCard";
-import anime  from "animejs/lib/anime.es.js"
+import anime from "animejs/lib/anime.es.js"
 
 class FullPage extends React.Component {
 
+ 
 
 
   onLeave(origin, destination, direction) {
@@ -18,25 +19,24 @@ class FullPage extends React.Component {
     header.style.opacity = "0";
 
     var subheader = destination.item.childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[1]
-    console.log(subheader)
     subheader.style.opacity = "0";
 
     var svg = document.getElementById('virgo');
     svg.style.opacity = "0";
 
-   var aboutMe = document.getElementById('aboutMeDiv')
-   aboutMe.style.opacity = "0";
+    var aboutMe = document.getElementById('aboutMeDiv')
+    aboutMe.style.opacity = "0";
 
 
-   var cardDeck = document.getElementById('cardDeck')
-   cardDeck.style.opacity = "0";
+    var cardDeck = document.getElementById('cardDeck')
+    cardDeck.style.opacity = "0";
 
     var contactDiv = document.getElementById('contactCard')
     contactDiv.style.opacity = "0";
 
-    console.log(header)
 
   }
+
   afterLoad(origin, destination, direction) {
     // Animate Header into page
     var header = destination.item.childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0]
@@ -47,21 +47,51 @@ class FullPage extends React.Component {
     var aboutMe = document.getElementById('aboutMeDiv')
     var contactDiv = document.getElementById('contactCard')
 
-    document.getElementById('cardDeck').style.opacity = "1"
-    console.log(destination)
+
+    //document.body.style.backgroundImage = "url('data:image/svg+xml,%3Csvg%20id%3D%22visual%22%20viewBox%3D%220%200%20960%20540%22%20width%3D%22960%22%20height%3D%22540%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%3E%0A%3Crect%20width%3D%22960%22%20height%3D%22540%22%20fill%3D%22%23393E46%22%2F%3E%0A%3Cg%3E%0A%3Cpath%20class%3D%22.morph%22%0A%20d%3D%22M390%200L398.2%2022.5C406.3%2045%20422.7%2090%20413.2%20135C403.7%20180%20368.3%20225%20370.7%20270C373%20315%20413%20360%20417.2%20405C421.3%20450%20389.7%20495%20373.8%20517.5L358%20540L0%20540L0%20517.5C0%20495%200%20450%200%20405C0%20360%200%20315%200%20270C0%20225%200%20180%200%20135C0%2090%200%2045%200%2022.5L0%200Z%22%20fill%3D%22%23222831%22%3E%3C%2Fpath%3E%0A%3C%2Fg%3E%0A%0A%0A%0A%3C%2Fsvg%3E')"
+    //background.style.backgroundImage = 
+    //background animation
+    let curve = document.getElementById('curve')
+  
+    //curve.style.backgroundImage = "url('data:image/svg+xml,%3Csvg%20id%3D%22visual%22%20viewBox%3D%220%200%20960%20540%22%20width%3D%22960%22%20height%3D%22540%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%3E%0A%3Crect%20width%3D%22960%22%20height%3D%22540%22%20fill%3D%22%23393E46%22%2F%3E%0A%3Cg%3E%0A%3Cpath%20class%3D%22.morph%22%0A%20d%3D%22M390%200L398.2%2022.5C406.3%2045%20422.7%2090%20413.2%20135C403.7%20180%20368.3%20225%20370.7%20270C373%20315%20413%20360%20417.2%20405C421.3%20450%20389.7%20495%20373.8%20517.5L358%20540L0%20540L0%20517.5C0%20495%200%20450%200%20405C0%20360%200%20315%200%20270C0%20225%200%20180%200%20135C0%2090%200%2045%200%2022.5L0%200Z%22%20fill%3D%22%23222831%22%3E%3C%2Fpath%3E%0A%3C%2Fg%3E%0A%0A%0A%0A%3C%2Fsvg%3E')"
+    // let shapes = [
+    //   {
+    //     d: "M452.844 540L442.18 517.5C431.647 495 410.321 450 422.674 405C435.028 360 481.062 315 477.941 270C474.95 225 422.934 180 417.473 135C412.141 90 453.234 45 473.91 22.5L494.456 0L-0.5 0V22.5C-0.5 45 -0.5 5.5 -0.5 50.5C-0.5 95.5 -0.5 111.5 -0.5 156.5C-0.5 201.5 -0.5 211 -0.5 256C-0.5 301 -0.5 332 -0.5 354.5V540L452.844 540Z",
+    //     fill : "#222831"
+    //   },
+    //   {
+    //     d: "M390 0L398.2 22.5C406.3 45 422.7 90 413.2 135C403.7 180 368.3 225 370.7 270C373 315 413 360 417.2 405C421.3 450 389.7 495 373.8 517.5L358 540L0 540L0 517.5C0 495 0 450 0 405C0 360 0 315 0 270C0 225 0 180 0 135C0 90 0 45 0 22.5L0 0Z",
+    //     fill : "#222831"
+    //   }
+    // ]
+
+    // var morph = anime({
+    //   targets: '.morph',
+    //   d: [
+    //     {value: shapes[0].d},
+    //     {value: shapes[1].d}
+    //   ],
+    //   duration :5000,
+    //   direction : 'alternate',
+    //   autoplay: true,
+    //   easing: 'linear',
+    //   elasticity : 100,
+    //   loop: true
+    // })
+
     var textAnimation = anime({
       targets: [header, subheader],
-      translateX: [0, '8%'],
+      //translateX: [0, '8%'],
       delay: 0,
-      opacity : [0, 1],
+      opacity: [0, 1],
       easing: 'easeInOutQuad',
 
     })
 
     var divAnimation = anime({
-      targets : [aboutMe, cardDeck, contactDiv ],
-      translateX: ['10%', 0],
-      delay:0.2,
+      targets: [aboutMe, cardDeck, contactDiv],
+      //translateX: ['10%', 0],
+      delay: 0.2,
       opacity: [0, 1],
       easing: 'easeInOutQuad'
     })
@@ -80,7 +110,7 @@ class FullPage extends React.Component {
     body.addEventListener('mousemove', (e) => {
       //console.log(e)
       virgo.style.left = - e.clientX * .02 + 'px'
-      virgo.style.top = - e.clientY * .02  + 50 + 'px'
+      virgo.style.top = - e.clientY * .02 + 50 + 'px'
 
 
     })
@@ -98,102 +128,102 @@ class FullPage extends React.Component {
 
 
     var svgFadeIn = anime({
-      targets : virgo,
+      targets: virgo,
       translateX: [0, 0],
       delay: 0,
-      opacity : [0, 1],
-      easing : 'easeInOutQuad'
+      opacity: [0, 1],
+      easing: 'easeInOutQuad'
     })
   }
 
 
 
 
-    render() {
-      return (
+  render() {
+    return (
 
-        <ReactFullpage
-          anchors={["JackDoyle", "AboutMe", "Projects", "Contact"]}
-          licenseKey={process.env.FP_LICENSE}
-          scrollOverflow={true}
-          onLeave={this.onLeave.bind(this)}
-          afterLoad={this.afterLoad.bind(this)}
-          render={({ state, fullpageApi }) => {
-            return (
-              <div id="fullpage-wrapper">
+      <ReactFullpage
+        anchors={["JackDoyle", "AboutMe", "Projects", "Contact"]}
+        licenseKey={process.env.FP_LICENSE}
+        scrollOverflow={true}
+        onLeave={this.onLeave.bind(this)}
+        afterLoad={this.afterLoad.bind(this)}
+        render={({ state, fullpageApi }) => {
+          return (
+            <div id="fullpage-wrapper">
+             
+        
+              <div className="section sectionBackground">
+                
 
+                <div className="contentDiv">
+                  <Row>
+                    <Col sm={true} md={true} >
+                      <div className="sectionHeader">
+                        <Header text='Jack Doyle' />
+                        <SubHeader line1='Recent Grad' line2='interested in' line3='Web technologies' />
 
-                <div className="section sectionBackground">
+                      </div>
 
-
-                  <div className="contentDiv">
-                    <Row>
-                      <Col sm={true} md={true} >
-                        <div className="sectionHeader">
-                          <Header text='Jack Doyle'/>
-                          <SubHeader line1='Recent Grad' line2='interested in' line3 = 'Web technologies'/>
-                        
-                        </div>
-
-                        {/* width="1110" height="814" viewBox="0 0 1480 1084" */}
-                      </Col>
-                      <Col sm={true} md={true} >
+                      {/* width="1110" height="814" viewBox="0 0 1480 1084" */}
+                    </Col>
+                    <Col sm={true} md={true} >
                       <div className="starsDiv">
                         <Particles className="particles"
-                            params={{
-                              "particles": {
-                                  "number": {
-                                      "value": 60,
-                                      "density": {
-                                          "enable": true,
-                                          "value_area": 100
-                                      }
-                                  },
-                                  "line_linked": {
-                                      "enable": false,
-                                      "opacity": 0.02
-                                  },
-                                  "move": {
-                                      "direction": "random",
-                                      "speed": 0.30
-                                  },
-                                  "size": {
-                                      "value": 2
-                                  },
-                                  "opacity": {
-                                      "anim": {
-                                          "enable": true,
-                                          "speed": 1,
-                                          "opacity_min": 0.05
-                                      }
-                                  }
+                          params={{
+                            "particles": {
+                              "number": {
+                                "value": 60,
+                                "density": {
+                                  "enable": true,
+                                  "value_area": 100
+                                }
                               },
-                              "interactivity": {
-                                  "events": {
-                                      "onclick": {
-                                          "enable": true,
-                                          "mode": "push"
-                                      }
-                                  },
-                                  "modes": {
-                                      "push": {
-                                          "particles_nb": 1
-                                      }
-                                  }
+                              "line_linked": {
+                                "enable": false,
+                                "opacity": 0.02
                               },
-                              "retina_detect": true
+                              "move": {
+                                "direction": "random",
+                                "speed": 0.30
+                              },
+                              "size": {
+                                "value": 2
+                              },
+                              "opacity": {
+                                "anim": {
+                                  "enable": true,
+                                  "speed": 1,
+                                  "opacity_min": 0.05
+                                }
+                              }
+                            },
+                            "interactivity": {
+                              "events": {
+                                "onclick": {
+                                  "enable": true,
+                                  "mode": "push"
+                                }
+                              },
+                              "modes": {
+                                "push": {
+                                  "particles_nb": 1
+                                }
+                              }
+                            },
+                            "retina_detect": true
                           }}
-                          />
+                        />
 
-                        <svg id='virgo' className='virgo'  viewBox="0 0 1480 1084" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg id='virgo' className='virgo' viewBox="0 0 1480 1084" fill="none" xmlns="http://www.w3.org/2000/svg">
 
                           <g id="virgo component">
                             <g id="porrima" className="porrima">
-                              <path id="Ellipse 11" d="M648 527C648 538.598 638.598 548 627 548C615.402 548 606 538.598 606 527C606 515.402 615.402 506 627 506C638.598 506 648 515.402 648 527ZM610.686 527C610.686 536.01 617.99 543.314 627 543.314C636.01 543.314 643.314 536.01 643.314 527C643.314 517.99 636.01 510.686 627 510.686C617.99 510.686 610.686 517.99 610.686 527Z"/>
-                              <ellipse  id="Ellipse 2" cx="627" cy="527" rx="12" ry="11" />
+                              <path id="Ellipse 11" d="M648 527C648 538.598 638.598 548 627 548C615.402 548 606 538.598 606 527C606 515.402 615.402 506 627 506C638.598 506 648 515.402 648 527ZM610.686 527C610.686 536.01 617.99 543.314 627 543.314C636.01 543.314 643.314 536.01 643.314 527C643.314 517.99 636.01 510.686 627 510.686C617.99 510.686 610.686 517.99 610.686 527Z" />
+                              <ellipse id="Ellipse 2" cx="627" cy="527" rx="12" ry="11" />
                             </g>
                             <g id="zaniah" className="zaniah">
-                              <path id="Ellipse 11_2" d="M880 475C880 486.598 870.598 496 859 496C847.402 496 838 486.598 838 475C838 463.402 847.402 454 859 454C870.598 454 880 463.402 880 475ZM842.686 475C842.686 484.01 849.99 491.314 859 491.314C868.01 491.314 875.314 484.01 875.314 475C875.314 465.99 868.01 458.686 859 458.686C849.99 458.686 842.686 465.99 842.686 475Z"/>
+                              <path id="Ellipse 11_2" d="M880 475C880 486.598 870.598 496 859 496C847.402 496 838 486.598 838 475C838 463.402 847.402 454 859 454C870.598 454 880 463.402 880 475ZM842.686 475C842.686 484.01 849.99 491.314 859 491.314C868.01 491.314 875.314 484.01 875.314 475C875.314 465.99 868.01 458.686 859 458.686C849.99 458.686 842.686 465.99 842.686 475Z" />
                               <ellipse id="Ellipse 2_2" cx="859" cy="475" rx="12" ry="11" />
                             </g>
                             <g id="heze" className="heze">
@@ -221,154 +251,154 @@ class FullPage extends React.Component {
                               <ellipse id="Ellipse 2_8" cx="488" cy="300" rx="12" ry="11" />
                             </g>
                             <g id="lines">
-                              <line id="heze-theta" x1="57.8041" y1="478.63" x2="290.63" y2="657.196" stroke="white" stroke-width="4" stroke-linecap="square" stroke-dasharray="5 7"/>
-                              <line id="spica-theta" x1="101.784" y1="913.18" x2="292.18" y2="691.216" stroke="white" stroke-width="4" stroke-linecap="square" stroke-dasharray="5 7"/>
-                              <path id="theta-porrima" d="M331 662C437.613 613.575 497.387 586.425 604 538" stroke="white" stroke-width="4" stroke-linecap="square" stroke-dasharray="5 7"/>
-                              <path id="porrima-zaniah" d="M651 518C722.466 503.16 762.534 494.84 834 480" stroke="white" stroke-width="4" stroke-linecap="square" stroke-dasharray="5 7"/>
-                              <path id="zaniah-zavijava" d="M884 471C981.241 457.722 1035.76 450.278 1133 437" stroke="white" stroke-width="4" stroke-linecap="square" stroke-dasharray="5 7"/>
-                              <line id="porrima-auva" x1="502.754" y1="321.643" x2="615.643" y2="503.246" stroke="white" stroke-width="4" stroke-linecap="square" stroke-dasharray="5 7"/>
-                              <line id="auva-vindemiatrix" x1="438.339" y1="49.5905" x2="481.59" y2="276.661" stroke="white" stroke-width="4" stroke-linecap="square" stroke-dasharray="5 7"/>
+                              <line id="heze-theta" x1="57.8041" y1="478.63" x2="290.63" y2="657.196" stroke="white" stroke-width="4" stroke-linecap="square" stroke-dasharray="5 7" />
+                              <line id="spica-theta" x1="101.784" y1="913.18" x2="292.18" y2="691.216" stroke="white" stroke-width="4" stroke-linecap="square" stroke-dasharray="5 7" />
+                              <path id="theta-porrima" d="M331 662C437.613 613.575 497.387 586.425 604 538" stroke="white" stroke-width="4" stroke-linecap="square" stroke-dasharray="5 7" />
+                              <path id="porrima-zaniah" d="M651 518C722.466 503.16 762.534 494.84 834 480" stroke="white" stroke-width="4" stroke-linecap="square" stroke-dasharray="5 7" />
+                              <path id="zaniah-zavijava" d="M884 471C981.241 457.722 1035.76 450.278 1133 437" stroke="white" stroke-width="4" stroke-linecap="square" stroke-dasharray="5 7" />
+                              <line id="porrima-auva" x1="502.754" y1="321.643" x2="615.643" y2="503.246" stroke="white" stroke-width="4" stroke-linecap="square" stroke-dasharray="5 7" />
+                              <line id="auva-vindemiatrix" x1="438.339" y1="49.5905" x2="481.59" y2="276.661" stroke="white" stroke-width="4" stroke-linecap="square" stroke-dasharray="5 7" />
                             </g>
                           </g>
                         </svg>
                       </div>
-                      </Col>
-                    </Row>
+                    </Col>
+                  </Row>
 
-                    <Row>
-                      <Col>
+                  <Row>
+                    <Col>
                       <div className="heroFooter">
 
-                        <svg  xmlns="http://www.w3.org/2000/svg" width="64" height="64" class="bi bi-mouse-fill" viewBox="0 0 16 16">
-                          <path className="scroller" onClick={() => fullpageApi.moveSectionDown()} d="M3 5a5 5 0 0 1 10 0v6a5 5 0 0 1-10 0V5zm5.5-1.5a.5.5 0 0 0-1 0v2a.5.5 0 0 0 1 0v-2z"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" class="bi bi-mouse-fill" viewBox="0 0 16 16">
+                          <path className="scroller" onClick={() => fullpageApi.moveSectionDown()} d="M3 5a5 5 0 0 1 10 0v6a5 5 0 0 1-10 0V5zm5.5-1.5a.5.5 0 0 0-1 0v2a.5.5 0 0 0 1 0v-2z" />
                         </svg>
 
 
-                        </div>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col>
-                        <div style={{textAlign: 'center'}}>
+                      </div>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <div style={{ textAlign: 'center' }}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#29a19c" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
-                          <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                          <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                          <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                          <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                         </svg>
 
-                        </div>
-                      </Col>
-                    </Row>
+                      </div>
+                    </Col>
+                  </Row>
 
-                  </div>
                 </div>
-                <div className="section  sectionBackground">
-                  <div className="contentDiv">
-                    <Row>
-                      <Col sm={true} >
+              </div>
+              <div className="section  sectionBackground">
+                <div className="contentDiv">
+                  <Row>
+                    <Col sm={true} >
                       <div className="sectionHeader">
-                        <Header id='header' text='About Me'/>
-                        <SubHeader line1='Who am I'/>
+                        <Header id='header' text='About Me' />
+                        <SubHeader line1='Who am I' />
                       </div>
 
 
-                      </Col>
-                      <Col sm={true}>
-                        <div  id="aboutMeDiv" className="contentCard" >
-                          <h3>Education</h3>
-                          <p>
-                            I am a recent graduate from BSc Computre Science (Infrastucture)
-                            in the <a className="link" href='https://www.tudublin.ie/study/undergraduate/courses/computer-science-infrastructure-tu857/'>Technological University of Dublin</a> achieving a 2.1 award.
-                            I really enjoyed opportunity to get an outlook in different technologies and learn about them in a sctructured way.
-                          </p>
-                          <p>
-                            I attended Christian Brothers College in Monkstown for Secondary level.
-                          </p>
-                          <hr/>
-                          <h3>Skills</h3>
-                          <p>
-                            I like to be a very active participant in team projects in University and in the workplace.
-                            Happy to take responsibliity and take lead on group work. Effective written  communication and presentation skills.
-                          </p>
-                          <p>
-                            I am currently most interested by the Web and Web Tecnologies. I explore this by taking
-                            on my own personal projects in my free time, check them out in the next <a className="link" onClick={() => fullpageApi.moveSectionDown()}>section</a>.
-                          </p>
-                          <hr />
-                          <h3>Interests</h3>
-                          <p>
-                             I really enjoyed my time with the Games Society in university.
-                             I put a lot of work into orgaising events with the committee there that required commuinication
-                             among a large team of people.
-                          </p>
-                          <p>
-                            I am deeply passionate about music listening to a large variety of genres and
-                            playing traditional Irish music on the Tenor Banjo and Mandolin.
-                          </p>
-                        </div>
-                      </Col>
-                    </Row>
-
-                  </div>
+                    </Col>
+                    <Col sm={true}>
+                      <div id="aboutMeDiv" className="contentCard" >
+                        <h3>Education</h3>
+                        <p>
+                          I am a recent graduate from BSc Computre Science (Infrastucture)
+                          in the <a className="link" href='https://www.tudublin.ie/study/undergraduate/courses/computer-science-infrastructure-tu857/'>Technological University of Dublin</a> achieving a 2.1 award.
+                          I really enjoyed opportunity to get an outlook in different technologies and learn about them in a sctructured way.
+                        </p>
+                        <p>
+                          I attended Christian Brothers College in Monkstown for Secondary level.
+                        </p>
+                        <hr />
+                        <h3>Skills</h3>
+                        <p>
+                          I like to be a very active participant in team projects in University and in the workplace.
+                          Happy to take responsibliity and take lead on group work. Effective written  communication and presentation skills.
+                        </p>
+                        <p>
+                          I am currently most interested by the Web and Web Tecnologies. I explore this by taking
+                          on my own personal projects in my free time, check them out in the next <a className="link" onClick={() => fullpageApi.moveSectionDown()}>section</a>.
+                        </p>
+                        <hr />
+                        <h3>Interests</h3>
+                        <p>
+                          I really enjoyed my time with the Games Society in university.
+                          I put a lot of work into orgaising events with the committee there that required commuinication
+                          among a large team of people.
+                        </p>
+                        <p>
+                          I am deeply passionate about music listening to a large variety of genres and
+                          playing traditional Irish music on the Tenor Banjo and Mandolin.
+                        </p>
+                      </div>
+                    </Col>
+                  </Row>
 
                 </div>
-                <div className="section  sectionBackground" >
-                  <div className="contentDiv">
+
+              </div>
+              <div className="section  sectionBackground" >
+                <div className="contentDiv">
                   <Row>
-                      <Col sm={true}>
-                           <div className="sectionHeader">
-                              <Header text='Projects'/>
-                              <SubHeader line1="What I've worked on"/>
-                           </div>
+                    <Col sm={true}>
+                      <div className="sectionHeader">
+                        <Header text='Projects' />
+                        <SubHeader line1="What I've worked on" />
+                      </div>
 
-                      </Col>
-                      <Col sm={true}>
-                        <Row>
-                          <div className='cardDeck' id='cardDeck'>
-                            <ProjectCard />
+                    </Col>
+                    <Col sm={true}>
+                      <Row>
+                        <div className='cardDeck' id='cardDeck'>
+                          <ProjectCard />
                         </div>
-                        </Row>
-                      </Col>
-                    </Row>
-                  </div>
-                </div>
-                <div className="section  sectionBackground">
-                  <div className="contentDiv">
-                  <Row>
-                      <Col sm={true}>
-                          <div className="sectionHeader">
-                            <Header text='Contact'/>
-                            <SubHeader line1='Get in touch'/>
-                          </div>
-                      </Col>
-                      <Col sm={true}>
-                        <div id="contactCard" style={{height : 500}}>
-                          <div className="contactCard">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#29a19c" class="bi bi-envelope-fill" viewBox="0 0 16 16">
-                              <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
-                            </svg>
-                            <a id="email" className="contact">jackp.doyle1@gmail.com</a>
-                            <hr/>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#29a19c" class="bi bi-linkedin" viewBox="0 0 16 16">
-                              <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
-                            </svg>
-                            <a id="linkedIn" className="contact" href="https://www.linkedin.com/in/jack-p-doyle/">LinkedIn</a>
-                        </div>
-                        </div>
-
-                      </Col>
-                    </Row>
-
-                  </div>
+                      </Row>
+                    </Col>
+                  </Row>
                 </div>
               </div>
-            );
-          }}
-        />
-      );
-    }
-  }
+              <div className="section  sectionBackground">
+                <div className="contentDiv">
+                  <Row>
+                    <Col sm={true}>
+                      <div className="sectionHeader">
+                        <Header text='Contact' />
+                        <SubHeader line1='Get in touch' />
+                      </div>
+                    </Col>
+                    <Col sm={true}>
+                      <div id="contactCard" style={{ height: 500 }}>
+                        <div className="contactCard">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#29a19c" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                            <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z" />
+                          </svg>
+                          <a id="email" className="contact">jackp.doyle1@gmail.com</a>
+                          <hr />
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#29a19c" class="bi bi-linkedin" viewBox="0 0 16 16">
+                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                          </svg>
+                          <a id="linkedIn" className="contact" href="https://www.linkedin.com/in/jack-p-doyle/">LinkedIn</a>
+                        </div>
+                      </div>
 
-  export default FullPage;
+                    </Col>
+                  </Row>
+
+                </div>
+              </div>
+              </div>
+          );
+        }}
+      />
+    );
+  }
+}
+
+export default FullPage;
 
 
 
