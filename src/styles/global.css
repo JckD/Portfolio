@@ -60,18 +60,7 @@ h2, h4 {
     /*vertical-align: center;*/
 }
 
-.sectionHeader {
-    
-    
-    /* margin-left: auto;
-    margin-right: auto; */
-    margin: auto;
-    width: 60%; 
-    height: 10em;
-    
-    align-items: center;
-    justify-content: center
-}
+
 
 h3 ,h5{
     color : #29a19c;
@@ -125,7 +114,7 @@ a:hover {
     /* flex-direction: column; */
     margin-top: 20%;
     overflow-wrap: break-word;
-    width: 30%;
+    width: 50%;
     
     margin-left: 25%;
 }
@@ -175,12 +164,16 @@ a:hover {
     
 }
 
+
+
+
 .sectionHeader {
-    /* padding-top: 20%; */
-    width: 90%;
-    margin-top: 20%;
-    margin-left: 30%;
-    
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
 
@@ -201,7 +194,13 @@ a:hover {
 
 .starsDiv {
     position: relative;
-    margin-bottom: 10%;
+    margin: 6%;
+    margin-top: 6%;
+    margin-left: 6%;
+    margin-right: 6%;
+    width: 93%;
+    
+    
 }
 
 .heroFooter {
@@ -282,11 +281,13 @@ a:hover {
 
 @media screen and (max-device-width: 500px)  {
     .sectionHeader {
-        margin-top: 0;
+        margin-top: auto;
         margin-left: 5%;
         height: 20%;
         width: 90%;
         text-align: center;
+        
+
         
     }
 
@@ -300,8 +301,7 @@ a:hover {
 
     .starsDiv {
         width: 100%;
-        margin-top: 10%;
-        margin-left: 10%;
+        margin: auto;
     }
 
     p{
@@ -357,10 +357,10 @@ a:hover {
 
 @media screen and (max-device-width: 1600px)  {
     .sectionHeader {
-        margin-top: 0;
-        margin-left: 5%;
-        height: 20%;
-        width: 90%;
+      
+        height: 100%;
+        width: 100%;
+        
         text-align: center;
         
     }
@@ -375,8 +375,7 @@ a:hover {
 
     .starsDiv {
         width: 100%;
-        margin-top: 10%;
-        margin-left: 10%;
+        margin-right: 0%;
     }
 
     p{

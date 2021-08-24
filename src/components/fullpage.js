@@ -15,14 +15,18 @@ class FullPage extends React.Component {
 
   onLeave(origin, destination, direction) {
     // Reset Header opactiy when leaving slide so animation can play again
-    var header = destination.item.childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0]
+    var header = destination.item.childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0]
+    console.log(header)
+    //var header = document.getElementById('header')
     header.style.opacity = "0";
+    
 
-    var subheader = destination.item.childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[1]
+    var subheader = destination.item.childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[1]
+    console.log(subheader)
     subheader.style.opacity = "0";
 
-    var svg = document.getElementById('virgo');
-    svg.style.opacity = "0";
+    // var svg = document.getElementById('virgo');
+    // svg.style.opacity = "0";
 
     var aboutMe = document.getElementById('aboutMeDiv')
     aboutMe.style.opacity = "0";
@@ -39,14 +43,17 @@ class FullPage extends React.Component {
 
   afterLoad(origin, destination, direction) {
     // Animate Header into page
-    var header = destination.item.childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0]
-    var subheader = destination.item.childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[1]
+    var header = destination.item.childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0]
+
+    var subheader = destination.item.childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[1]
+
     // var header = document.getElementsByClassName('header');
     var cardDeck = document.getElementById('cardDeck')
     var virgo = document.getElementById('virgo');
     var aboutMe = document.getElementById('aboutMeDiv')
     var contactDiv = document.getElementById('contactCard')
 
+   // console.log(destination.item.childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[1])
 
     //document.body.style.backgroundImage = "url('data:image/svg+xml,%3Csvg%20id%3D%22visual%22%20viewBox%3D%220%200%20960%20540%22%20width%3D%22960%22%20height%3D%22540%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%3E%0A%3Crect%20width%3D%22960%22%20height%3D%22540%22%20fill%3D%22%23393E46%22%2F%3E%0A%3Cg%3E%0A%3Cpath%20class%3D%22.morph%22%0A%20d%3D%22M390%200L398.2%2022.5C406.3%2045%20422.7%2090%20413.2%20135C403.7%20180%20368.3%20225%20370.7%20270C373%20315%20413%20360%20417.2%20405C421.3%20450%20389.7%20495%20373.8%20517.5L358%20540L0%20540L0%20517.5C0%20495%200%20450%200%20405C0%20360%200%20315%200%20270C0%20225%200%20180%200%20135C0%2090%200%2045%200%2022.5L0%200Z%22%20fill%3D%22%23222831%22%3E%3C%2Fpath%3E%0A%3C%2Fg%3E%0A%0A%0A%0A%3C%2Fsvg%3E')"
     //background.style.backgroundImage = 
@@ -154,20 +161,19 @@ class FullPage extends React.Component {
              
         
               <div className="section sectionBackground">
-                
-
                 <div className="contentDiv">
                   <Row>
-                    <Col sm={true} md={true} >
+                    <Col sm={true} >
                       <div className="sectionHeader">
-                        <Header text='Jack Doyle' />
-                        <SubHeader line1='Recent Grad' line2='interested in' line3='Web technologies' />
-
+                        <div>
+                          <Header id="header" text='Jack Doyle' />
+                          <SubHeader line1='Recent Grad' line2='interested in' line3='Web technologies' />
+                        </div>
                       </div>
 
                       {/* width="1110" height="814" viewBox="0 0 1480 1084" */}
                     </Col>
-                    <Col sm={true} md={true} >
+                    <Col sm={true} >
                       <div className="starsDiv">
                         <Particles className="particles"
                           params={{
@@ -215,7 +221,7 @@ class FullPage extends React.Component {
                           }}
                         />
 
-                        <svg id='virgo' className='virgo' viewBox="0 0 1480 1084" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        {/* <svg id='virgo' className='virgo' viewBox="0 0 1480 1084" fill="none" xmlns="http://www.w3.org/2000/svg">
 
                           <g id="virgo component">
                             <g id="porrima" className="porrima">
@@ -260,7 +266,33 @@ class FullPage extends React.Component {
                               <line id="auva-vindemiatrix" x1="438.339" y1="49.5905" x2="481.59" y2="276.661" stroke="white" stroke-width="4" stroke-linecap="square" stroke-dasharray="5 7" />
                             </g>
                           </g>
-                        </svg>
+                        </svg> */}
+                        <svg  id='virgo' className='virgo' viewBox="0 0 1480 1084"  fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M720.6 570.868C720.6 583.48 709.863 593.703 696.618 593.703C683.373 593.703 672.636 583.48 672.636 570.868C672.636 558.257 683.373 548.034 696.618 548.034C709.863 548.034 720.6 558.257 720.6 570.868ZM677.988 570.868C677.988 580.665 686.329 588.608 696.618 588.608C706.907 588.608 715.248 580.665 715.248 570.868C715.248 561.071 706.907 553.129 696.618 553.129C686.329 553.129 677.988 561.071 677.988 570.868Z" fill="white"/>
+                          <ellipse cx="696.618" cy="570.868" rx="13.704" ry="11.9611" fill="white"/>
+                          <path d="M985.543 514.325C985.543 526.937 974.806 537.16 961.561 537.16C948.316 537.16 937.579 526.937 937.579 514.325C937.579 501.714 948.316 491.491 961.561 491.491C974.806 491.491 985.543 501.714 985.543 514.325ZM942.931 514.325C942.931 524.122 951.272 532.064 961.561 532.064C971.85 532.064 980.191 524.122 980.191 514.325C980.191 504.528 971.85 496.586 961.561 496.586C951.272 496.586 942.931 504.528 942.931 514.325Z" fill="white"/>
+                          <ellipse cx="961.561" cy="514.325" rx="13.704" ry="11.9611" fill="white"/>
+                          <path d="M47.9639 502.364C47.9639 514.975 37.2268 525.199 23.9819 525.199C10.7371 525.199 0 514.975 0 502.364C0 489.753 10.7371 479.529 23.9819 479.529C37.2268 479.529 47.9639 489.753 47.9639 502.364ZM5.35161 502.364C5.35161 512.161 13.6927 520.103 23.9819 520.103C34.2712 520.103 42.6122 512.161 42.6122 502.364C42.6122 492.567 34.2712 484.625 23.9819 484.625C13.6927 484.625 5.35161 492.567 5.35161 502.364Z" fill="white"/>
+                          <ellipse cx="23.9819" cy="502.364" rx="13.704" ry="11.9611" fill="white"/>
+                          <path d="M1327 467.568C1327 480.18 1316.26 490.403 1303.02 490.403C1289.77 490.403 1279.04 480.18 1279.04 467.568C1279.04 454.957 1289.77 444.734 1303.02 444.734C1316.26 444.734 1327 454.957 1327 467.568ZM1284.39 467.568C1284.39 477.365 1292.73 485.308 1303.02 485.308C1313.31 485.308 1321.65 477.365 1321.65 467.568C1321.65 457.771 1313.31 449.829 1303.02 449.829C1292.73 449.829 1284.39 457.771 1284.39 467.568Z" fill="white"/>
+                          <ellipse cx="1303.02" cy="467.568" rx="13.704" ry="11.9611" fill="white"/>
+                          <path d="M97.0697 1010.17C97.0697 1022.78 86.3326 1033 73.0878 1033C59.8429 1033 49.1058 1022.78 49.1058 1010.17C49.1058 997.554 59.8429 987.331 73.0878 987.331C86.3326 987.331 97.0697 997.554 97.0697 1010.17ZM54.4574 1010.17C54.4574 1019.96 62.7985 1027.9 73.0878 1027.9C83.377 1027.9 91.7181 1019.96 91.7181 1010.17C91.7181 1000.37 83.377 992.426 73.0878 992.426C62.7985 992.426 54.4574 1000.37 54.4574 1010.17Z" fill="white"/>
+                          <ellipse cx="73.0877" cy="1010.17" rx="13.704" ry="11.9611" fill="white"/>
+                          <path d="M496.769 22.8347C496.769 35.446 486.031 45.6695 472.787 45.6695C459.542 45.6695 448.805 35.446 448.805 22.8347C448.805 10.2235 459.542 0 472.787 0C486.031 0 496.769 10.2235 496.769 22.8347ZM454.156 22.8347C454.156 32.6318 462.497 40.5739 472.787 40.5739C483.076 40.5739 491.417 32.6318 491.417 22.8347C491.417 13.0377 483.076 5.09561 472.787 5.09561C462.497 5.09561 454.156 13.0377 454.156 22.8347Z" fill="white"/>
+                          <ellipse cx="472.787" cy="22.8347" rx="13.704" ry="11.9611" fill="white"/>
+                          <path d="M358.587 729.624C358.587 742.236 347.85 752.459 334.605 752.459C321.36 752.459 310.623 742.236 310.623 729.624C310.623 717.013 321.36 706.789 334.605 706.789C347.85 706.789 358.587 717.013 358.587 729.624ZM315.975 729.624C315.975 739.421 324.316 747.363 334.605 747.363C344.894 747.363 353.235 739.421 353.235 729.624C353.235 719.827 344.894 711.885 334.605 711.885C324.316 711.885 315.975 719.827 315.975 729.624Z" fill="white"/>
+                          <ellipse cx="334.605" cy="729.624" rx="13.704" ry="11.9611" fill="white"/>
+                          <path d="M561.862 324.036C561.862 336.647 551.125 346.871 537.88 346.871C524.636 346.871 513.898 336.647 513.898 324.036C513.898 311.425 524.636 301.201 537.88 301.201C551.125 301.201 561.862 311.425 561.862 324.036ZM519.25 324.036C519.25 333.833 527.591 341.775 537.88 341.775C548.17 341.775 556.511 333.833 556.511 324.036C556.511 314.239 548.17 306.297 537.88 306.297C527.591 306.297 519.25 314.239 519.25 324.036Z" fill="white"/>
+                          <ellipse cx="537.88" cy="324.036" rx="13.704" ry="11.9611" fill="white"/>
+                          <line x1="2" y1="-2" x2="331.724" y2="-2" transform="matrix(0.807586 0.589749 -0.627294 0.778783 43.3959 518.675)" stroke="white" stroke-width="4" stroke-linecap="square" stroke-dasharray="5 7"/>
+                          <line x1="2" y1="-2" x2="327.296" y2="-2" transform="matrix(0.669322 -0.742972 0.774502 0.632571 97.0697 993.855)" stroke="white" stroke-width="4" stroke-linecap="square" stroke-dasharray="5 7"/>
+                          <path d="M358.587 717.663C480.339 665.007 548.6 635.485 670.352 582.83" stroke="white" stroke-width="4" stroke-linecap="square" stroke-dasharray="5 7"/>
+                          <path d="M724.026 561.082C805.64 544.946 851.397 535.899 933.011 519.762" stroke="white" stroke-width="4" stroke-linecap="square" stroke-dasharray="5 7"/>
+                          <path d="M990.111 509.976C1101.16 495.538 1163.42 487.443 1274.47 473.005" stroke="white" stroke-width="4" stroke-linecap="square" stroke-dasharray="5 7"/>
+                          <line x1="2" y1="-2" x2="238.238" y2="-2" transform="matrix(0.546666 0.837351 -0.860558 0.509352 551.584 346.871)" stroke="white" stroke-width="4" stroke-linecap="square" stroke-dasharray="5 7"/>
+                          <line x1="2" y1="-2" x2="254.159" y2="-2" transform="matrix(0.196159 0.980572 -0.983948 0.178453 478.497 50.019)" stroke="white" stroke-width="4" stroke-linecap="square" stroke-dasharray="5 7"/>
+                          </svg>
+
                       </div>
                     </Col>
                   </Row>
@@ -291,13 +323,16 @@ class FullPage extends React.Component {
 
                 </div>
               </div>
-              <div className="section  sectionBackground">
+              <div className="section sectionBackground">
                 <div className="contentDiv">
                   <Row>
-                    <Col sm={true} >
+                    <Col sm={true}>
                       <div className="sectionHeader">
-                        <Header id='header' text='About Me' />
-                        <SubHeader line1='Who am I' />
+                        <div>
+                          <Header id='header' text='About Me' />
+                          <SubHeader line1='Who am I' />
+                        </div>
+                        
                       </div>
 
 
@@ -346,17 +381,20 @@ class FullPage extends React.Component {
                   <Row>
                     <Col sm={true}>
                       <div className="sectionHeader">
-                        <Header text='Projects' />
-                        <SubHeader line1="What I've worked on" />
+                        <div>
+                          <Header id='header' text='Projects' />
+                          <SubHeader line1="What I've worked on" />
+                        </div>
+                        
                       </div>
 
                     </Col>
                     <Col sm={true}>
-                      <Row>
+                      
                         <div className='cardDeck' id='cardDeck'>
                           <ProjectCard />
                         </div>
-                      </Row>
+                      
                     </Col>
                   </Row>
                 </div>
@@ -366,8 +404,11 @@ class FullPage extends React.Component {
                   <Row>
                     <Col sm={true}>
                       <div className="sectionHeader">
-                        <Header text='Contact' />
-                        <SubHeader line1='Get in touch' />
+                         <div>
+                           <Header text='Contact' />
+                            <SubHeader line1='Get in touch' />
+                        </div>
+                        
                       </div>
                     </Col>
                     <Col sm={true}>
