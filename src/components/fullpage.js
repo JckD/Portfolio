@@ -19,7 +19,7 @@ class FullPage extends React.Component {
     //console.log(header)
     //var header = document.getElementById('header')
     header.style.opacity = "0";
-   
+    document.title = 'Jack Doyle|Portfolio'
 
     var subheader = destination.item.childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[1]
     //console.log(subheader)
