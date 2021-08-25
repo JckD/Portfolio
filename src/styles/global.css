@@ -1,26 +1,19 @@
 html {
-    /* background-color: #222831; */
-   
-    /* background: #222831; */
     height : 100%;
     margin : 0;
     padding: 0;
 }
 
 body {
-    /* background-color: #222831;
-    background: #222831; */
     background-image: url("data:image/svg+xml,%3Csvg%20id%3D%22visual%22%20viewBox%3D%220%200%20960%20540%22%20width%3D%22960%22%20height%3D%22540%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%3E%0A%3Crect%20width%3D%22960%22%20height%3D%22540%22%20fill%3D%22%23393E46%22%2F%3E%0A%3Cg%3E%0A%3Cpath%20d%3D%22M390%200L398.2%2022.5C406.3%2045%20422.7%2090%20413.2%20135C403.7%20180%20368.3%20225%20370.7%20270C373%20315%20413%20360%20417.2%20405C421.3%20450%20389.7%20495%20373.8%20517.5L358%20540L0%20540L0%20517.5C0%20495%200%20450%200%20405C0%20360%200%20315%200%20270C0%20225%200%20180%200%20135C0%2090%200%2045%200%2022.5L0%200Z%22%20fill%3D%22%23222831%22%3E%3C%2Fpath%3E%0A%3C%2Fg%3E%0A%0A%3Cg%3E%0A%3Cpath%20d%3D%22M452.844%20540L442.18%20517.5C431.647%20495%20410.321%20450%20422.674%20405C435.028%20360%20481.062%20315%20477.941%20270C474.95%20225%20422.934%20180%20417.473%20135C412.141%2090%20453.234%2045%20473.91%2022.5L494.456%200L-0.5%200V22.5C-0.5%2045%20-0.5%205.5%20-0.5%2050.5C-0.5%2095.5%20-0.5%20111.5%20-0.5%20156.5C-0.5%20201.5%20-0.5%20211%20-0.5%20256C-0.5%20301%20-0.5%20332%20-0.5%20354.5V540L452.844%20540Z%22%20fill%3D%22%23222831%22%2F%3E%0A%3C%2Fg%3E%0A%0A%0A%0A%3C%2Fsvg%3E");
     height : 100%;
     background-repeat: no-repeat;
     background-size: cover;
     margin : 0;
     padding: 0;
-    /* #393e46 */
 }
 
 .bg {
-    /* background-image: url("data:image/svg+xml,%3Csvg%20id%3D%22visual%22%20viewBox%3D%220%200%20960%20540%22%20width%3D%22960%22%20height%3D%22540%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%3E%0A%3Crect%20width%3D%22960%22%20height%3D%22540%22%20fill%3D%22%23393E46%22%2F%3E%0A%3Cg%3E%0A%3Cpath%20d%3D%22M390%200L398.2%2022.5C406.3%2045%20422.7%2090%20413.2%20135C403.7%20180%20368.3%20225%20370.7%20270C373%20315%20413%20360%20417.2%20405C421.3%20450%20389.7%20495%20373.8%20517.5L358%20540L0%20540L0%20517.5C0%20495%200%20450%200%20405C0%20360%200%20315%200%20270C0%20225%200%20180%200%20135C0%2090%200%2045%200%2022.5L0%200Z%22%20fill%3D%22%23222831%22%3E%3C%2Fpath%3E%0A%3C%2Fg%3E%0A%0A%3Cg%3E%0A%3Cpath%20d%3D%22M452.844%20540L442.18%20517.5C431.647%20495%20410.321%20450%20422.674%20405C435.028%20360%20481.062%20315%20477.941%20270C474.95%20225%20422.934%20180%20417.473%20135C412.141%2090%20453.234%2045%20473.91%2022.5L494.456%200L-0.5%200V22.5C-0.5%2045%20-0.5%205.5%20-0.5%2050.5C-0.5%2095.5%20-0.5%20111.5%20-0.5%20156.5C-0.5%20201.5%20-0.5%20211%20-0.5%20256C-0.5%20301%20-0.5%20332%20-0.5%20354.5V540L452.844%20540Z%22%20fill%3D%22%23222831%22%2F%3E%0A%3C%2Fg%3E%0A%0A%0A%0A%3C%2Fsvg%3E"); */
     position: absolute;
     top: 0px;
     left: 0px;
@@ -28,12 +21,12 @@ body {
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
+    aspect-ratio: 960/540;
     margin : 0;
     padding: 0;
 }
 
 p {
-    /* font-size: 0.75vw; */
     color:  white;
     font-family: 'Poppins', sans-serif;
     text-align: justify;
@@ -42,46 +35,23 @@ p {
 h1 {
      font-size: 75px; 
     color : #29a19c;
-    /* opacity: 0; */
     font-family: 'Poppins', sans-serif;
-   
-
-    
-    /*text-shadow: -2px 0px #a3f7bf; /* #393e46;
-    /* -4px 3px 0 #3a50d9, -14px 7px 0 #0a0e27; */
 }
 
 h2, h4 {
-    /* font-size: 1.7vw; */
     color:  white;
     font-family: 'Poppins', sans-serif;
-   
-  
-    /*vertical-align: center;*/
 }
-
-
 
 h3 ,h5{
     color : #29a19c;
-   
     font-family: 'Poppins', sans-serif;   
 }
 
 hr {
     border: 1px solid white;
-  
+    width: 100%;
 }
-
-/* a { 
-    color: #a3f7bf;
-    cursor: pointer;
-}
-
-a:hover {
-    color: #a3f7bf;
-    cursor: pointer;
-} */
 
 .link {
     color: #a3f7bf;
@@ -94,7 +64,6 @@ a:hover {
 }
 
 .contact {
-   
     color: white;
     margin-left: 2%;
     font-family: 'Poppins', sans-serif;    
@@ -106,25 +75,27 @@ a:hover {
 }
 
 .contactCard {
-    
     background-color: #222831;
     padding: 24px;
     border-radius: 10px;
-    /* justify-content: center; */
-    /* flex-direction: column; */
-    margin-top: 20%;
     overflow-wrap: break-word;
     width: 50%;
-    
-    margin-left: 25%;
 }
 
+.starsDiv {
+    margin: 6%;
+    margin-top: 6%;
+    margin-left: 6%;
+    margin-right: 6%;
+    width: 93%;
+    display: inline;
+}
 
 .virgo {
     z-index: 0;
-    width: 100%;
+    width: 80%;
+    margin-left: 6%;
     position: relative;
-
 }
 
 .particles {
@@ -140,32 +111,15 @@ a:hover {
     fill : white;
 }
 
-
 .porrima:hover *, .zaniah:hover *, .heze:hover *, .zavijava:hover *, .spica:hover *, .vindemiatrix:hover * , .theta:hover *, .auva:hover * {
     fill : #29a19c;
     cursor: pointer;
-
-}
-
-.line {
-    /* opacity: 0; */
-    position: absolute;
-    left: 0;
-    height: 3px;
-    width: inherit;
-    background-color: #29a19c;
-    top: 0;
 }
 
 .contentDiv {
     justify-content: center;
     position: relative;
-
-    
 }
-
-
-
 
 .sectionHeader {
     height: 100%;
@@ -173,10 +127,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
-
-
 
 .scroller {
     fill : #29a19c;
@@ -184,61 +135,37 @@ a:hover {
 }
 
 .sectionBackground {
-    aspect-ratio: 960/540;
-   
     background-size: cover;
     background-repeat: no-repeat;
-    width: fit-content;
-    
+    width: fit-content; 
 }
 
-.starsDiv {
-    position: relative;
-    margin: 6%;
-    margin-top: 6%;
-    margin-left: 6%;
-    margin-right: 6%;
-    width: 93%;
-    
-    
+.heroFooter { 
+    text-align: center; 
 }
-
-.heroFooter {
-   
-    text-align: center;
-    
-}
-
 
 .contentCard {
-    /* opacity: 0; */
-   
     background-color: #222831;
     padding: 24px;
     border-radius: 10px;
-    /* justify-content: center; */
-    /* flex-direction: column; */
     position: relative;
     width: 90%;
-    
+    min-width: 400px;
     margin-left: 5%;
-    /* min-height: 656px; */
 }
 
 .projectCard {
     background-color: #222831;
     padding: 24px;
     margin-top: 15px;
-    margin-right: 32px;
+    margin-right: 0px;
     border-radius: 10px;
-   
-    flex-direction: column;
-    width: 30%;
-    height: 50%;
+    display: flex;
+    flex-flow: column;
+    width: 40%;
     transition: transform 250ms;
     position: relative;
     border: 3px solid #222831;
-    
 }
 
 .projectCard:hover {
@@ -248,47 +175,39 @@ a:hover {
     border-radius: 10px;
 }
 
-
-.projectCardFooter {
-    position: absolute;
-    bottom : 10px;
-}
-
 .cardDeck {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
-    
+    justify-content: space-evenly;
+    min-width: 1000px;
 }
 
 .projectCardIcon {
     width: 8%;
     margin-left: 8px;
-    
+    max-width: 30px;
 }
 
 .projectCardImage {
-    
     display: block;
     margin : auto;
-    width: 30%;
-    /* height: 30%;  */
-  
-
-   
+    width: 20%;
 }
 
+@media screen and (max-width: 900px) {
+    .cardDeck {
+        margin-left: 0%;
+        margin-right: 0%;
+        min-width: 500px;
+    }
+}
 
-@media screen and (max-device-width: 500px)  {
+@media screen and (max-width: 700px)  {
     .sectionHeader {
-        margin-top: auto;
-        margin-left: 5%;
+        margin-top: auto; 
         height: 20%;
         width: 90%;
-        text-align: center;
-        
-
-        
+        text-align: center; 
     }
 
     h1 {
@@ -300,8 +219,17 @@ a:hover {
     }
 
     .starsDiv {
-        width: 100%;
-        margin: auto;
+        margin-left: 6%; 
+        min-width: 300px;
+    }
+
+    .particles {
+        margin-left: 10%;
+    }
+
+    .virgo {
+        margin-left: 15%;
+        min-width: 300px;
     }
 
     p{
@@ -309,16 +237,17 @@ a:hover {
     }
 
     .cardDeck {
-        margin-left: 5%;
-        margin-right: 5%;
+        margin-left: 0%;
+        margin-right: 0%;
+        min-width: 400px;
+        justify-content: center;
     }
 
     .projectCard {
        padding: 20px;
        padding-top: 0;
        padding-bottom: 10px;
-       width: 95%;
-       height : 25%;
+       width: fit-content;
        margin-left: 0%;
        margin-top: 10px;
        margin-right: 0%;
@@ -339,30 +268,23 @@ a:hover {
     .projectCardIcon {
         width : 5%
     }
-
-    hr {
+    .projectHR {
+        display: none;
         border: 0px;
     }
-
 
    .sectionBackground {
     background-image: linear-gradient(#222831, #363c44);;
    
-    }
-
-    .contactCard {
-        margin-left: 14%;
     }
 }
 
-@media screen and (max-device-width: 1600px)  {
+@media screen and (max-width: 1600px)  {
     .sectionHeader {
-      
         height: 100%;
         width: 100%;
-        
         text-align: center;
-        
+        min-width: 400px;
     }
 
     h1 {
@@ -373,9 +295,20 @@ a:hover {
         font-size: 21px;
     }
 
+
+
     .starsDiv {
-        width: 100%;
-        margin-right: 0%;
+        margin-left: 6%; 
+        min-width: 300px;
+    }
+
+    .particles {
+        margin-left: 10%;
+    }
+
+    .virgo {
+        margin-left: 15%;
+        min-width: 300px;
     }
 
     p{
@@ -383,19 +316,21 @@ a:hover {
     }
 
     .cardDeck {
-        margin-left: 5%;
-        margin-right: 5%;
+        margin-left: 0%;
+        margin-right: 0%;
+       max-width: 1200px;
     }
 
     .projectCard {
        padding: 20px;
        padding-top: 0;
        padding-bottom: 10px;
-       width: 95%;
-       height : 25%;
+       width: 80%;
+       height : 50%;
        margin-left: 0%;
        margin-top: 10px;
        margin-right: 0%;
+       max-width: 900px;
     }
 
     .projectCard:hover {
@@ -406,25 +341,22 @@ a:hover {
    }
 
     .projectCardImage {
-        width : 0%;
-        height : 0%
+        display: none;
+        position: absolute;
     }
 
     .projectCardIcon {
-        width : 5%
+        width : 5%;
+        max-width: 20px;
     }
 
-    hr {
+    .projectHR {
+        display: none;
         border: 0px;
     }
-
 
    .sectionBackground {
     background-image: linear-gradient(#222831, #363c44);;
    
-    }
-
-    .contactCard {
-        margin-left: 14%;
     }
 }

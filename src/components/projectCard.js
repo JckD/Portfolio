@@ -43,14 +43,14 @@ export default function ProductCard() {
           {data.allAirtable.edges.map(({ node }, i)  =>(
             <div className='projectCard'>
               <Image src={node.data.image.raw[0].url} className='projectCardImage'/>
-              <hr/>
+              <hr className="projectHR"/>
               <h5>{node.data.Title}</h5>
               <p>{node.data.description}</p>
     
               <div className="projectCardFooter">
     
                   <a href={node.data.githublink} target="_blank" rel="noreferrer">
-                  <Image  src={github} style={{width : '6%'}} />
+                  <Image  src={github}  className="projectCardIcon" />
                 </a>
             
                 {node.data.icons.raw.map((icon, j) => (
