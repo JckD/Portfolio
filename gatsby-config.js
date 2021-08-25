@@ -35,6 +35,15 @@ module.exports = {
 			}
 		},
 		{
+			resolve: `gatsby-plugin-manifest`,
+			options: {
+				name: `GatsbyJS`,
+				short_name: `GatsbyJS`,
+				display: `standalone`,
+				icon: `src/images/nuts.png`
+			}
+		},
+		{
 			resolve: `gatsby-plugin-google-fonts`,
 			options: {
 				fonts: [
