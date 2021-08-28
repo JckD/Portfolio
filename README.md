@@ -1,6 +1,6 @@
 
 <h1 align="center">
-<a href="portfolio.jdoyle.ie"> Portfolio Website</a>
+<a href="https://portfolio.jdoyle.ie"> Portfolio Website</a>
 </h1>
 
 <p>
@@ -31,7 +31,7 @@
    The drawbacks here don't have a very large effect as this isn't a database that will ever be updated very frequently at all and redeploying for each new record added is not a huge cost meaning the semi-static nature of it suits the application.
 
    Here is what the data looks like in Airtable:
-   <img src="/src/images/readmeImg/reaconds.png">
+   <img src="./src/images/readmeImg/reacords.png">
 
 </p>
 
@@ -43,6 +43,15 @@
 
   One feature of Netlify I am grateful for are Build Hooks. These all you to create a new deployment from a POST request this gives more flexibily for Continuous Deployment and Intergration.
 
-  I was able to make the deploy ment proccess 
+  I was able to make the deployment proccess smoother by using this build hook with Airtables scripting API 
+
+   <img src="./src/images/readmeImg/reacords.png">
+
+
+  Literally one line of code just to make the post request to tell Netlify to make a new build. 
+
+  This script is run just by clicking a button in the Airtable UI making it easier to update the site if any new rows are added. It could automatically run the script when a record is added to the table but that is only available to the paid tiers.
+
+  Unfortunately as of Sept 2021 scripting will only be availble for higher paid tiers so I will be left to clicking the redeploy button in Netlify's control panel. It nothing major, just more clicks, so I may look into  another "sudo databse" in the future.
 </p>
 
