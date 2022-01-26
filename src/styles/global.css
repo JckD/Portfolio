@@ -26,6 +26,23 @@ body {
     padding: 0;
 }
 
+
+
+.menuButton {
+    color: white;
+    margin-left: 2%;
+    font-family: 'Poppins', sans-serif;    
+}
+
+.menuButton:hover {
+    color: #29a19c;
+    cursor: pointer;
+}
+
+.menuButton:active {
+    color: #29a19c;
+}
+
 p {
     color:  white;
     font-family: 'Poppins', sans-serif;

@@ -30,9 +30,6 @@
 
    The drawbacks here don't have a very large effect as this isn't a database that will ever be updated very frequently at all and redeploying for each new record added is not a huge cost meaning the semi-static nature of it suits the application.
 
-   Here is what the data looks like in Airtable:
-   <img src="./src/images/readmeImg/reacords.png">
-
 </p>
 
 <h3>Deployment</h3>
@@ -44,8 +41,6 @@
   One feature of Netlify I am grateful for are Build Hooks. These all you to create a new deployment from a POST request this gives more flexibily for Continuous Deployment and Intergration.
 
   I was able to make the deployment proccess smoother by using this build hook with Airtables scripting API 
-
-   <img src="./src/images/readmeImg/reacords.png">
 
 
   Literally one line of code just to make the post request to tell Netlify to make a new build. 
