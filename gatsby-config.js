@@ -44,6 +44,13 @@ module.exports = {
 			}
 		},
 		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				name: `markdown-pages`,
+				path: `${__dirname}/src/markdown-pages`
+			}
+		},
+		{
 			resolve: `gatsby-source-notion-api`,
 			options: {
 				token: process.env.INTEGRATION_TOKEN,
