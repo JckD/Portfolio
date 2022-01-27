@@ -68,6 +68,7 @@ module.exports = {
 				display: "swap"
 			}
 		},
-		`gatsby-plugin-offline`
+		`gatsby-plugin-offline`,
+		`gatsby-plugin-react-helmet`
 	]
 }
