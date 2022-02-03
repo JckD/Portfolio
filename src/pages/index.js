@@ -1,7 +1,6 @@
 import React from "react"
 import FullPage from "../components/fullpage"
 import anime from "animejs/lib/anime.es.js"
-import { Helmet } from "react-helmet"
 
 
 export default function Home() {
@@ -40,11 +39,6 @@ export default function Home() {
   return (
 
     <div className="bg" id ="curve">
-      <Helmet>
-          <meta charSet="utf-8"/>
-          <title>Jack Doyle | Portfolio</title>
-          <meta name="description" content="About me and what I'm working on"/>
-      </Helmet>
       <FullPage />
     </div>
       
